@@ -1,23 +1,42 @@
 nav.navigation#navigation
    .container
-      a.logo#logo(href="/") EVIL-STUDIO
-      .nav__links
-         .magnet
-            a.nav__btn.active(href="/") Home
-         .magnet
-            a.nav__btn(href="/about") About
-         .magnet
-            a.nav__btn(href="/portfolio") Portfolio
-         .magnet
-            a.nav__btn(href="/contact") Contact
-      button.hamb__btn
-         .dot
-         .dot
-         .dot
+      a.logo#logo(href="/") Exorse
+      button.hamb__btn Menu
 
 .hamb__menu
    .hamb__menu__inner
-      a.hamb__menu__link.splitter(href="/") Home
-      a.hamb__menu__link.splitter(href="/about") About Us
-      a.hamb__menu__link.splitter(href="/portfolio") Portfolio
-      a.hamb__menu__link.splitter(href="/contact") Contact
+      .hamb__images__wrapper
+         .hamb__images__wrapper__inner
+            .images__wrapper__block
+            figure.hamb__pic__wrapper.active(data-hover="1")
+               img.hamb__pic.left(data-src="/btn-1.jpg", alt="Hamb Picture")
+            figure.hamb__pic__wrapper(data-hover="2")
+               img.hamb__pic.right(data-src="/btn-2.jpg", alt="Hamb Picture")
+            figure.hamb__pic__wrapper(data-hover="3")
+               img.hamb__pic.left(data-src="/btn-3.jpg", alt="Hamb Picture")
+            figure.hamb__pic__wrapper(data-hover="4")
+               img.hamb__pic.right(data-src="/btn-4.jpg", alt="Hamb Picture")
+      .hamb__btns
+         ul.hamb__links__wrapper
+            li.hamb__link__wrapper
+               a.hamb__menu__link.splitter(href="/" data-links="1") Work
+            li.hamb__link__wrapper
+               a.hamb__menu__link.splitter(href="/" data-links="2") Studio
+            li.hamb__link__wrapper
+               a.hamb__menu__link.splitter(href="/" data-links="3") News
+            li.hamb__link__wrapper
+               a.hamb__menu__link.splitter(href="/" data-links="4") Contact
+         ul.hamb__contact__wrapper
+            li.hamb__contact__link__wrapper
+               a.hamb__menu__link.splitter.no-transition(href="/") Behance
+            li.hamb__contact__link__wrapper
+               a.hamb__menu__link.splitter.no-transition(href="/") Dribbble
+            li.hamb__contact__link__wrapper
+               a.hamb__menu__link.splitter.no-transition(href="/") Twitter
+            li.hamb__contact__link__wrapper
+               a.hamb__menu__link.splitter.no-transition(href="/") Instagram
+         ul.hamb__list
+            li.hamb__list__item
+               a.hamb__menu__link.splitter(href="/") Our Story
+            li.hamb__menu__item
+               a.hamb__menu__link.video__btn.splitter(href="/") Play Reel

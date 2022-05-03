@@ -11,9 +11,7 @@ export default class Preloader extends Component {
         title: ".preloader__text",
         number: ".preloader__number",
         images: document.querySelectorAll("img"),
-        numberText: ".preloader__number__text",
-        preloader_line: ".preloader__line",
-        preloader_span: ".preloader__text__span"
+        numberText: ".preloader__number__text"
       }
     });
 
@@ -45,7 +43,7 @@ export default class Preloader extends Component {
   onLoaded() {
     return new Promise((resolve) => {
       this.animateOut = gsap.timeline({
-        delay: 1
+        delay: 0
       });
       this.animateOut.to(this.elements.numberText, {
         y: "100%",
@@ -53,32 +51,6 @@ export default class Preloader extends Component {
         duration: 1.5,
         ease: "expo.out"
       });
-      this.animateOut.to(
-        this.elements.preloader_span,
-        1,
-        {
-          y: "0",
-          stagger: 0.1,
-          ease: "Power2.easeIn"
-        },
-        "-=1.5"
-      );
-      this.animateOut.to(this.elements.preloader_span, 1, {
-        x: "200%",
-        stagger: 0.1,
-        ease: "Power2.easeIn"
-      });
-      this.animateOut.to(
-        this.elements.preloader_line,
-        1,
-        {
-          y: "100%",
-          opacity: 1,
-          stagger: 0.1,
-          ease: "Power2.easeIn"
-        },
-        "-=1"
-      );
       this.animateOut.to(this.element, {
         opacity: 0,
         duration: 1,

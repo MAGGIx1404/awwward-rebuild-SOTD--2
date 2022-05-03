@@ -29,7 +29,7 @@
 %link {
   @extend %link__wrapper;
 
-  display: inline-block;
+  // display: inline-block;
   line-height: 1.05;
   padding: 0.4rem 0;
 
@@ -67,4 +67,49 @@
 
 .hover__btn {
   @extend %link;
+}
+
+%btn-size {
+  @extend %link;
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+%big-btn {
+  @extend %link;
+  font-size: 8rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.main__btn {
+  font-size: 1.8rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-white;
+    z-index: 1;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s $ease-in-out;
+  }
+
+  &:hover {
+    &::after {
+      transform-origin: right;
+      transform: scaleX(0);
+    }
+  }
 }

@@ -3,6 +3,8 @@ import Preloader from "components/Preloader";
 // import Transition from "components/Transition";
 import each from "lodash/each";
 import magnetBtn from "vendors/magnet";
+import gsap from "gsap";
+import { Expo } from "gsap";
 
 class App {
   constructor() {
@@ -188,16 +190,65 @@ class App {
   hambMenu() {
     let hamb__btn = document.querySelector(".hamb__btn");
     let hamb__menu = document.querySelector(".hamb__menu");
-    let hamb__links = [...document.querySelectorAll(".hamb__menu__link")];
+    const hamb__links = [...document.querySelectorAll("[data-links]")];
+    const hamb__pics = [...document.querySelectorAll("[data-hover]")];
+    let bloack = document.querySelector(".images__wrapper__block");
+    let link_word = document.querySelectorAll(".hamb__menu__link .word");
+    let tl = gsap.timeline();
 
-    hamb__btn.addEventListener("click", function () {
-      hamb__menu.classList.toggle("active");
-    });
+    for (let i = 0; i < hamb__links.length; i++) {
+      hamb__links[i].addEventListener("mouseover", (e) => {
+        hamb__pics.forEach((el) => {
+          el.classList.remove("active");
+        });
+        hamb__pics[i].classList.add("active");
+      });
+    }
 
     hamb__links.forEach((el) => {
       el.addEventListener("click", function () {
-        hamb__menu.classList.remove("active");
+        bloack.classList.remove("active");
+        tl.to(link_word, 0.5, {
+          y: "110%",
+          opacity: 0,
+          ease: Expo.easeInOut,
+          stagger: {
+            from: "end",
+            each: 0.04
+          }
+        });
+        setTimeout(() => {
+          hamb__menu.classList.remove("active");
+        }, 700);
       });
+    });
+
+    hamb__btn.addEventListener("click", function () {
+      if (hamb__menu.classList.contains("active")) {
+        bloack.classList.remove("active");
+        tl.to(link_word, 0.5, {
+          y: "110%",
+          opacity: 0,
+          ease: Expo.easeInOut,
+          stagger: {
+            from: "end",
+            each: 0.04
+          }
+        });
+        setTimeout(() => {
+          hamb__menu.classList.remove("active");
+        }, 700);
+      } else {
+        hamb__menu.classList.add("active");
+        bloack.classList.add("active");
+        tl.to(link_word, 0.8, {
+          delay: "0.5",
+          y: "0",
+          opacity: 1,
+          ease: Expo.easeInOut,
+          stagger: 0.1
+        });
+      }
     });
   }
 }

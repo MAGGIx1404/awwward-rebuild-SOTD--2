@@ -15,20 +15,22 @@
     margin: 0 auto;
     @extend %flex-row-space;
     padding: 2rem 0;
+    pointer-events: none;
   }
 
-  & a {
+  & a,
+  & button {
     pointer-events: all !important;
     cursor: pointer;
     color: $color-white;
-    display: inline-block;
   }
 
   & .logo {
     @extend %description-32;
-    font-weight: 700;
-    font-family: $font-b;
+    font-weight: 600;
+    font-family: $font-a;
     transition: color 0.2s;
+    letter-spacing: 2px;
 
     &:hover {
       color: $color-theme;
@@ -36,127 +38,156 @@
   }
 }
 
-.nav__links {
-  flex: 0 0 20%;
-  max-width: 20%;
-  width: 100%;
-  height: fit-content;
-  @extend %flex-row-space;
-
-  @include media("<tablet") {
-    display: none;
-  }
-
-  & .nav__btn {
-    @extend %description-14;
-    font-weight: 400;
-    color: $color-white;
-    @extend %link;
-    transition: color 0.5s ease;
-
-    &:hover {
-      color: $color-theme;
-    }
-  }
+.hamb__btn {
+  @extend %btn-size;
 }
 
-.magnet {
-  display: inline-block;
-  pointer-events: all;
-  padding: 1rem;
-}
-
-button.hamb__btn {
-  width: 7rem;
-  height: 7rem;
-  position: fixed;
-  top: 0.5rem;
-  right: 5vw;
-  pointer-events: all;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  cursor: pointer;
-  z-index: 12;
-  opacity: 0;
-  visibility: hidden;
-
-  @include media("<tablet") {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  &:hover {
-    .dot {
-      background-color: $color-theme;
-    }
-  }
-
-  .dot {
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 50%;
-    background-color: $color-white;
-    transition: all 0.3s;
-  }
-}
+// hamb menu
 
 .hamb__menu {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: fixed;
+  z-index: 49;
   top: 0;
   left: 0;
-  z-index: 10;
-  background: $color-black;
-  overflow: hidden;
-  transform: translateY(-100%);
-  transition: all 0.7s ease;
+  transform-origin: top center;
+  background: $color-gray;
+  transform: scaleY(0);
+  transition: all 1s $ease-in-out;
 
   &.active {
-    transform: translateY(0) !important;
-
-    a {
-      .word {
-        .char {
-          transform: translateY(0) !important;
-        }
-      }
-    }
+    transform: scaleY(1);
   }
 
   &__inner {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    @extend %flex;
     align-items: center;
     justify-content: center;
 
-    a {
-      font-size: 10rem;
-      font-weight: 400;
-      font-family: $font-b;
-      line-height: 1;
-      letter-spacing: 1px;
+    .hamb__images__wrapper,
+    .hamb__btns {
+      flex: 0 0 50%;
+      max-width: 50%;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
 
-      .word {
-        overflow: hidden;
+    .hamb__btns {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-left: 10vw;
 
-        .char {
-          transition-delay: calc(0ms + var(--char-index) * 25ms);
-          transform: translateY(100%);
-          transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95),
-            color 0.1s;
+      ul {
+        width: 100%;
+        height: fit-content;
+
+        &.hamb__list {
+          @extend %flex-row-space;
+          width: 80%;
+          height: fit-content;
+          margin-top: 8rem;
+
+          li {
+            a {
+              @extend %btn-size;
+              color: rgba($color: $color-white, $alpha: 1);
+            }
+          }
+        }
+
+        a {
+          overflow: hidden;
+
+          .word {
+            transform: translateY(110%);
+            opacity: 0;
+          }
+        }
+
+        .hamb__link__wrapper {
+          a {
+            @extend %big-btn;
+          }
+        }
+
+        &.hamb__contact__wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          margin-top: 4rem;
+
+          .hamb__contact__link__wrapper {
+            @extend %btn-size;
+            color: rgba($color: $color-white, $alpha: 0.5);
+          }
         }
       }
+    }
 
-      &:not(:nth-of-type(1)) {
-        margin-top: 3rem;
-      }
+    .hamb__images__wrapper {
+      @extend %center;
+      &__inner {
+        width: 30vw;
+        height: 70vh;
+        position: relative;
+        overflow: hidden;
 
-      &:hover {
-        color: $color-theme;
+        .images__wrapper__block {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 5;
+          background-color: $color-gray;
+          transform-origin: bottom;
+          transition: all 0.7s $ease-in-out;
+          transition-delay: 0.4s;
+
+          &.active {
+            transform: scaleY(0);
+          }
+        }
+
+        figure {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform-origin: center;
+            transform: rotate(-20deg) scale(1.5);
+            filter: grayscale(10) blur(4px);
+            transition: transform 0.8s ease, opacity 0.6s ease,
+              filter 0.55s ease;
+            opacity: 0;
+          }
+
+          &.active {
+            z-index: 2;
+
+            img {
+              opacity: 1;
+              transform: rotate(0) scale(1);
+              opacity: 1;
+              filter: grayscale(0) blur(0);
+            }
+          }
+        }
       }
     }
   }

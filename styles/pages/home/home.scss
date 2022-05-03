@@ -1,5 +1,5 @@
 .home {
-  background-color: $color-gray;
+  background-color: $color-white;
   opacity: 0;
   position: fixed;
   width: 100%;
@@ -38,6 +38,100 @@
 
 .home__banner {
   width: 100%;
-  min-height: 150vh;
-  padding: 10vh 0;
+  height: fit-content;
+  max-height: fit-content;
+  padding: 50vh 0 15vh 0;
+  position: relative;
+
+  &__inner {
+    @extend %innerSection;
+
+    width: 100%;
+    height: fit-content;
+    min-height: 150vh;
+
+    .home__content__wrapper {
+      width: 100%;
+      min-height: 150vh;
+      height: fit-content;
+
+      p.paragraph {
+        @extend %paragraph;
+      }
+
+      .para {
+        margin-top: 10vh;
+      }
+
+      h1.title {
+        @extend %big-title;
+        margin-top: 10vh;
+        letter-spacing: 0 !important;
+      }
+
+      .list__wrapper {
+        width: 100%;
+        height: fit-content;
+        @extend %flex-row-space;
+        align-items: flex-start;
+        margin-top: 10vh;
+
+        .list__wrapper__left,
+        .list__wrapper__right {
+          flex: 0 0 50%;
+          max-width: 50%;
+          width: 100%;
+          height: fit-content;
+        }
+        .list__wrapper__right {
+          @extend %flex-row-space;
+          align-items: flex-start;
+          padding: 0 8vw;
+
+          ul {
+            width: fit-content;
+            height: fit-content;
+
+            li {
+              padding: 0.3rem 0;
+              a {
+                @extend %btn-size;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    figure {
+      position: relative;
+      overflow: hidden;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+
+      div {
+        position: absolute !important;
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
 }

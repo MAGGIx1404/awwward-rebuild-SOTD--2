@@ -16,13 +16,15 @@ export default class Home extends Page {
       elements: {
         wrapper: ".home__wrapper", // scroller
         links_wrapper: ".home__title__link",
-        home_pics: ".parallax__image"
+        home_pics: ".parallax__image",
+        slides: "[data-slide]"
       }
     });
   }
 
   create() {
     super.create();
+    this.parallax();
   }
 
   parallax() {

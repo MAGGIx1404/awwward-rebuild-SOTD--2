@@ -9,4 +9,32 @@ block body
         //- Scroll wrapper
         .home__wrapper
             .home__banner
-                img(data-src="/exorse-1.webp", alt="error")
+                .home__banner__inner
+                    .home__content__wrapper
+                        p.paragraph!=home.data.banner[0].paragraph.replace(/\n/g,"</br>")
+                        h1.title!=home.data.banner[0].title.replace(/\n/g,"</br>")
+                        p.paragraph.para(data-animation="paragraph")!=home.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
+                        .list__wrapper
+                            .list__wrapper__left
+                                a.banner__btn.main__btn(href="/" data-animation="paragraph")!=home.data.banner[0].btn_1.replace(/\n/g,"</br>")
+                            .list__wrapper__right
+                                ul.banner__links__list
+                                    li.banner__link__wrapper
+                                        a.banner__link(href="/" data-animation="paragraph") Work
+                                    li.banner__link__wrapper
+                                        a.banner__link(href="/" data-animation="paragraph") Studio
+                                    li.banner__link__wrapper
+                                        a.banner__link(href="/" data-animation="paragraph") News
+                                    li.banner__link__wrapper
+                                        a.banner__link(href="/" data-animation="paragraph") Contact
+                                ul.banner__links__list
+                                    li.banner__link__wrapper
+                                        a.banner__link(href="/" data-animation="paragraph") hello@exorse.com
+                                    li.banner__link__wrapper
+                                        a.banner__link(href="/" data-animation="paragraph") +1(047) 807 5156
+                //- bg
+                .home__banner__bg
+                    figure.home__banner__bg__wrapper
+                        img.home__banner__bg__pic.parallax__image(data-src="/heroes/home-hero-2.jpg", alt="banner picture" data-slide="2")
+                        img.home__banner__bg__pic.parallax__image(data-src="/heroes/home-hero.jpg", alt="banner picture" data-slide="1")
+                        //- img.home__banner__bg__pic.parallax__image(data-src="/heroes/home-hero-3.jpg", alt="banner picture" data-slide="3")
