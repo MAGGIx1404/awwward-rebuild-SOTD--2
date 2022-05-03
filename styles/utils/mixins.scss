@@ -1,0 +1,66 @@
+%cover {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+%center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+%flex {
+  display: flex;
+}
+
+%flex-row-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%flex-row-center {
+  @extend %flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-column-center {
+  @extend %flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-y-center {
+  @extend %flex;
+  align-items: center;
+}
+
+%flex-x-center {
+  @extend %flex;
+  justify-content: center;
+}
+
+%p-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin ratio($height, $width) {
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    padding-top: $width / $height * 100%;
+    width: 100%;
+  }
+}

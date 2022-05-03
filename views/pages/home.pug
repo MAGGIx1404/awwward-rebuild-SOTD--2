@@ -1,0 +1,12 @@
+extends ../base.pug
+
+block variables
+    - var template = 'home'
+
+block body
+    .home(data-background="" data-color="")
+        canvas.webgl-container
+        //- Scroll wrapper
+        .home__wrapper
+            .home__banner
+                img(data-src="/exorse-1.webp", alt="error")

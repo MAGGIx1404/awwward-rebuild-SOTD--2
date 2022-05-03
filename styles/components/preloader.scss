@@ -1,0 +1,104 @@
+.preloader {
+  @extend %cover;
+  @extend %center;
+  background-color: $color-black;
+  color: $color-white;
+  text-align: center;
+  z-index: 201;
+  will-change: transform;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 5vw;
+  position: relative;
+
+  .preloader__wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+
+    .preloader__line {
+      flex: 0 0 10%;
+      max-width: 10%;
+      width: 100%;
+      height: 100vh;
+      background: $color-theme;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 35rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media("<tablet") {
+          height: 25rem;
+        }
+
+        @include media("<phone") {
+          height: 15rem;
+        }
+
+        span {
+          position: absolute;
+          font-size: 35rem;
+          font-weight: 400;
+          font-family: $font-b !important;
+          line-height: 1;
+          transform: translateY(-100%);
+
+          @include media("<tablet") {
+            font-size: 25rem;
+          }
+          @include media("<phone") {
+            font-size: 15rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.preloader__number {
+  @extend %title-10;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.preloader__number__text {
+  display: inline-block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  pointer-events: none;
+
+  .overlay__line {
+    flex: 0 0 10%;
+    max-width: 10%;
+    width: 100%;
+    height: 100vh;
+    background: $color-theme;
+    opacity: 0;
+    pointer-events: all;
+    transform: scaleX(0);
+  }
+}

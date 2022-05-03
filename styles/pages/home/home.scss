@@ -1,0 +1,43 @@
+.home {
+  background-color: $color-gray;
+  opacity: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+  will-change: opacity;
+
+  &--active {
+    opacity: 1;
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+.home__wrapper {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.home__banner {
+  width: 100%;
+  min-height: 150vh;
+  padding: 10vh 0;
+}

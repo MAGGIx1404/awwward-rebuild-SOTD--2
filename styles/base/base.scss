@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@import "locomotive-scroll/dist/locomotive-scroll.min.css";
+// Scroll hijeck
+%scrolljeck {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  background-color: white;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: calc(100vw / 1920 * 10);
+  line-height: 1;
+
+  @include media("<tablet") {
+    font-size: calc(100vw / 1024 * 10);
+  }
+
+  @include media("<phone") {
+    font-size: calc(100vw / 750 * 10);
+  }
+}
+
+body {
+  @extend %description-16;
+  @extend %scrolljeck;
+
+  font-family: $font-b;
+
+  color: $color-white;
+  background-color: $color-gray;
+}
+
+a {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+  font-family: $font-c;
+}
+
+canvas {
+  pointer-events: none;
+  position: relative;
+  z-index: z("canvas");
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+img {
+  //   opacity: 1;
+  transition: opacity 0.4s ease;
+  vertical-align: middle;
+  transition-delay: 1s;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+.content {
+  @extend %scrolljeck;
+}
+
+[data-animation="label"],
+[data-animation="paragraph"],
+[data-animation="title"] {
+  span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+}
+
+[data-animation="button"] {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    transform-origin: center center 0.5em;
+    vertical-align: middle;
+  }
+}
+
+[data-animation="link"] {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    transform-origin: center center 0.5em;
+    vertical-align: middle;
+  }
+}
+
+p {
+  font-family: $font-c !important;
+}

@@ -1,0 +1,15 @@
+{
+    "root": true,
+    "extends": ["standard"],
+    "globals": {
+        "IS_DEVELOPMENT": "readonly"
+    },
+    "parserOptions": {
+        "ecmaversion": 2020
+    },
+    "rules": {
+        "semi": [2, "always"],
+        "quotes": ["error", "double"],
+        "space-before-function-paren": ["error", "ignore"]
+    }
+}

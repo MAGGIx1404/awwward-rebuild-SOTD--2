@@ -1,0 +1,30 @@
+// Reset
+@import "./base/reset";
+
+// Utils
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/functions";
+@import "./utils/responsive";
+
+// Shared
+@import "./shared/links";
+@import "./shared/titles";
+@import "./shared/descriptions";
+@import "./shared/section";
+
+// Components
+@import "./components/canvas";
+@import "./components/preloader";
+@import "./components/navigation";
+// @import "./components/footer";
+
+@import "./base/fonts";
+@import "./base/base";
+
+// Pages
+@import "./pages/home/home";
+// @import "./pages/about/about";
+// @import "./pages/portfolio/portfolio";
+// @import "./pages/contact/contact";
+// @import "./pages/work/work";
