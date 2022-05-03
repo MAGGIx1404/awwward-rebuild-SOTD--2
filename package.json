@@ -85,6 +85,7 @@
   "dependencies": {
     "@prismicio/client": "^6.4.1",
     "@prismicio/helpers": "^2.2.0",
+    "GLSlideshow": "^2.4.0",
     "body-parser": "^1.19.2",
     "draggabilly": "^3.0.0",
     "errorhandler": "^1.5.1",

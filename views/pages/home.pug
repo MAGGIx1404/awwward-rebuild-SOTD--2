@@ -5,7 +5,6 @@ block variables
 
 block body
     .home(data-background="" data-color="")
-        canvas.webgl-container
         //- Scroll wrapper
         .home__wrapper
             .home__banner
@@ -38,6 +37,7 @@ block body
                         img.home__banner__bg__pic.parallax__image.slide_1.active(data-src="/heroes/home-hero.jpg", alt="banner picture" data-slide="1")
                         img.home__banner__bg__pic.parallax__image.slide_2(data-src="/heroes/home-hero-2.jpg", alt="banner picture" data-slide="2")
                         img.home__banner__bg__pic.parallax__image.slide_3(data-src="/heroes/home-hero-3.jpg", alt="banner picture" data-slide="3")
+                        canvas.webgl-container.parallax__image#webgl-container
 
             .home__work__banner#home__work
                 .home__work__banner__inner

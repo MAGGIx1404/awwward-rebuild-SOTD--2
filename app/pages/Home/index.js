@@ -5,6 +5,17 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { delay } from "utils/math";
 import Ukiyo from "ukiyojs";
 import { TimelineMax } from "gsap/gsap-core";
+import GLSlideshow from "GLSlideshow";
+
+import imgOne from "../../../shared/heroes/home-hero.jpg";
+import imgTwo from "../../../shared/heroes/home-hero-2.jpg";
+import imgThree from "../../../shared/heroes/home-hero-3.jpg";
+
+const images = {
+  imgOne,
+  imgTwo,
+  imgThree
+};
 
 export default class Home extends Page {
   constructor() {
@@ -32,6 +43,7 @@ export default class Home extends Page {
     super.create();
     this.parallax();
     this.pinReel();
+    this.slider();
   }
 
   parallax() {
@@ -96,5 +108,21 @@ export default class Home extends Page {
 
   onResize() {
     super.onResize();
+  }
+
+  slider() {
+    this.slideShow = new GLSlideshow(
+      [images.imgOne, images.imgTwo, images.imgThree],
+      {
+        canvas: document.getElementById("webgl-container"), // optional
+        width: window.innerWidth,
+        height: window.innerHeight * 2,
+        duration: 1000,
+        interval: 5000,
+        effect: "directionalWipe"
+      }
+    );
+
+    console.log(window.innerHeight);
   }
 }
