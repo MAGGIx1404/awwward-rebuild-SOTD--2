@@ -1,0 +1,32 @@
+footer.footer
+    footer.footer__inner
+        .footer__title__wrapper
+            h1.title_two!=footer.data.banner[0].title.replace(/\n/g,"</br>")
+            p.paragraph(data-animation="paragraph")!=footer.data.banner[0].paragraph.replace(/\n/g,"</br>")
+        .footer__lists
+            .address__wrapper
+                p.paragraph(data-animation="paragraph")!=footer.data.banner[0].address.replace(/\n/g,"</br>")
+            ul.footer__links__list
+                li.footer__link__wrapper
+                    a.footer__link(href="/" data-animation="paragraph") Work
+                li.footer__link__wrapper
+                    a.footer__link(href="/" data-animation="paragraph") Studio
+                li.footer__link__wrapper
+                    a.footer__link(href="/" data-animation="paragraph") News
+                li.footer__link__wrapper
+                    a.footer__link(href="/" data-animation="paragraph") Contact
+            ul.footer__links__list
+                li.footer__link__wrapper
+                    a.footer__link.no-transition(href="/" data-animation="paragraph") Behance
+                li.footer__link__wrapper
+                    a.footer__link.no-transition(href="/" data-animation="paragraph") Dribbble
+                li.footer__link__wrapper
+                    a.footer__link.no-transition(href="/" data-animation="paragraph") Twitter
+                li.footer__link__wrapper
+                    a.footer__link.no-transition(href="/" data-animation="paragraph") Instagram
+            a.btn.main__btn(href="/" data-animation="paragraph") Our Story
+    .footer__bg__wrapper
+        video.footer__video(src="/videos/footer.mp4" loop muted autoplay)
+    .footer__cr__wrapper
+        p.paragraph_two &copy; CopyRights resved by Exorse 2022.
+        p.paragraph_two Dev by : #[a.cr.no-transition(href="/") MAGGIx1404]

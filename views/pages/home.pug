@@ -35,6 +35,74 @@ block body
                 //- bg
                 .home__banner__bg
                     figure.home__banner__bg__wrapper
-                        img.home__banner__bg__pic.parallax__image(data-src="/heroes/home-hero-2.jpg", alt="banner picture" data-slide="2")
-                        img.home__banner__bg__pic.parallax__image(data-src="/heroes/home-hero.jpg", alt="banner picture" data-slide="1")
-                        //- img.home__banner__bg__pic.parallax__image(data-src="/heroes/home-hero-3.jpg", alt="banner picture" data-slide="3")
+                        img.home__banner__bg__pic.parallax__image.slide_1.active(data-src="/heroes/home-hero.jpg", alt="banner picture" data-slide="1")
+                        img.home__banner__bg__pic.parallax__image.slide_2(data-src="/heroes/home-hero-2.jpg", alt="banner picture" data-slide="2")
+                        img.home__banner__bg__pic.parallax__image.slide_3(data-src="/heroes/home-hero-3.jpg", alt="banner picture" data-slide="3")
+
+            .home__work__banner#home__work
+                .home__work__banner__inner
+                    .home__work__title__wrapper
+                        h1.title(data-animation="paragraph")!=home.data.work[0].title.replace(/\n/g,"</br>")
+                    .home__work__content__wrapper
+                        .home__work__content__text
+                            h6.heading(data-animation="paragraph")!=home.data.work[0].content_title.replace(/\n/g,"</br>")
+                            p.paragraph(data-animation="paragraph")!=home.data.work[0].paragraph.replace(/\n/g,"</br>")
+                        .work__item.work__item__one(data-heading="Ali Ali")
+                            a.home__work__item__link(href="/" data-scroll data-scroll-offset="25%")
+                                figure.home__work__item__pic__wrapper
+                                    img.home__work__item__pic.parallax__image__slow(data-src="/heroes/1-hero.webp", alt="project pic")
+                                video(src="/videos/1-hover.mp4" loop muted autoplay)
+                        .work__item.work__item__two.right(data-heading="Ottografie")
+                            a.home__work__item__link(href="/"  data-scroll data-scroll-offset="25%")
+                                figure.home__work__item__pic__wrapper
+                                    img.home__work__item__pic.parallax__image__slow(data-src="/heroes/2-hero.webp", alt="project pic")
+                                video(src="/videos/2-hover.mp4" loop muted autoplay)
+                        .work__item.work__item__three.center(data-heading="Rino & Pelle")
+                            a.home__work__item__link(href="/"  data-scroll data-scroll-offset="25%")
+                                figure.home__work__item__pic__wrapper
+                                    img.home__work__item__pic.parallax__image__slow(data-src="/heroes/3-hero.webp", alt="project pic")
+                                video(src="/videos/3-hover.mp4" loop muted autoplay)
+                        .work__item.work__item__four(data-heading="Abele Interiors")
+                            a.home__work__item__link(href="/"  data-scroll data-scroll-offset="25%")
+                                figure.home__work__item__pic__wrapper
+                                    img.home__work__item__pic.parallax__image__slow(data-src="/heroes/4-hero.webp", alt="project pic")
+                                video(src="/videos/4-hover.mp4" loop muted autoplay)
+                        a.btn.main__btn(href="/")!=home.data.work[0].btn_1.replace(/\n/g,"</br>")
+
+            //- reel
+            .home__reel__wrapper
+                .home__reel__wrapper__main
+                    .home__reel__wrapper__inner
+                        .home__reel__content__wrapper
+                            h6.heading(data-animation="paragraph")!=home.data.reel[0].heading.replace(/\n/g,"</br>")
+                            .title__wrapper
+                                h1.sub-title.reel_left_title!=home.data.reel[0].title_1.replace(/\n/g,"</br>")
+                                h1.sub-title.reel_right_title!=home.data.reel[0].title_2.replace(/\n/g,"</br>")
+                            p.paragraph(data-animation="paragraph")!=home.data.reel[0].info.replace(/\n/g,"</br>")
+                    .home__reel__bg__wrapper
+                        video.reel_video(src="/videos/reel.mp4" muted autoplay loop)
+
+            //- gallery
+            .home__gallery__wrapper
+                .home__gallery__wrapper__inner
+                    .home__gallery__container
+                        figure.gallery__item__wrapper.center-wrapper(data-scroll data-scroll-speed="-2")
+                            img.gallery__pic(data-src="/home-news-1.webp", alt="news pic")
+                        video.video__one(src="/videos/home-news-1.mp4" loop autoplay muted data-scroll data-scroll-speed="1" data-scroll-direction="horizontal")
+                        figure.gallery__item__wrapper.two(data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal")
+                            img.gallery__pic(data-src="/home-news-2.webp", alt="news pic")
+                        video.video__two(src="/videos/home-news-2.mp4" loop autoplay muted data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal")
+                        figure.gallery__item__wrapper.three(data-scroll data-scroll-speed="1" data-scroll-direction="horizontal")
+                            img.gallery__pic(data-src="/home-news-3.webp", alt="news pic")
+
+            .home__news__wrapper
+                .home__news__wrapper__inner
+                    .home__news__content__wrapper
+                        h6.heading(data-animation="paragraph")!=home.data.news[0].heading.replace(/\n/g,"</br>")
+                        p.title_two(data-animation="paragraph")!=home.data.news[0].title.replace(/\n/g,"</br>")
+                        h6.paragraph(data-animation="paragraph")!=home.data.news[0].paragraph.replace(/\n/g,"</br>")
+                        a.btn_1.main__btn(href="/")!=home.data.news[0].btn_1.replace(/\n/g,"</br>")
+
+            //- footer
+
+            include ../partials/footer

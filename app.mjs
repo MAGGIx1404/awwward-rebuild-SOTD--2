@@ -43,21 +43,20 @@ app.use((req, res, next) => {
   next();
 });
 
-// async function handleRequest(api) {
-//   const meta = await api.getSingle("meta");
-//   const footer = await api.getSingle("footer");
-//   return { meta, footer };
-// }
+async function handleRequest(api) {
+  const footer = await api.getSingle("footer");
+  return { footer };
+}
 
 // Home page
 app.get("/", async (req, res) => {
-  //   const defaults = await handleRequest(client);
+  const defaults = await handleRequest(client);
   const home = await client.getSingle("home");
   const assets = [];
 
   return res.render("pages/home", {
     home,
-    // ...defaults,
+    ...defaults,
     assets
   });
 });

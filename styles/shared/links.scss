@@ -99,7 +99,7 @@
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: $color-white;
+    background-color: currentColor;
     z-index: 1;
     transform-origin: left;
     transform: scaleX(1);

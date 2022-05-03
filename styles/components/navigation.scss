@@ -14,7 +14,7 @@
     width: 100%;
     margin: 0 auto;
     @extend %flex-row-space;
-    padding: 2rem 0;
+    padding: 4rem 0;
     pointer-events: none;
   }
 
@@ -58,6 +58,10 @@
 
   &.active {
     transform: scaleY(1);
+  }
+
+  a {
+    color: $color-white;
   }
 
   &__inner {
@@ -127,7 +131,6 @@
 
           .hamb__contact__link__wrapper {
             @extend %btn-size;
-            color: rgba($color: $color-white, $alpha: 0.5);
           }
         }
       }

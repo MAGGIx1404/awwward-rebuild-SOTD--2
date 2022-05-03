@@ -194,6 +194,7 @@ class App {
     const hamb__pics = [...document.querySelectorAll("[data-hover]")];
     let bloack = document.querySelector(".images__wrapper__block");
     let link_word = document.querySelectorAll(".hamb__menu__link .word");
+    let mainContent = document.querySelector(".content");
     let tl = gsap.timeline();
 
     for (let i = 0; i < hamb__links.length; i++) {
@@ -219,6 +220,7 @@ class App {
         });
         setTimeout(() => {
           hamb__menu.classList.remove("active");
+          mainContent.classList.remove("active");
         }, 700);
       });
     });
@@ -237,9 +239,11 @@ class App {
         });
         setTimeout(() => {
           hamb__menu.classList.remove("active");
+          mainContent.classList.remove("active");
         }, 700);
       } else {
         hamb__menu.classList.add("active");
+        mainContent.classList.add("active");
         bloack.classList.add("active");
         tl.to(link_word, 0.8, {
           delay: "0.5",

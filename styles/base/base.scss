@@ -8,6 +8,7 @@
   top: 0;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 *,
@@ -40,8 +41,8 @@ body {
 
   font-family: $font-b;
 
-  color: $color-white;
-  background-color: $color-gray;
+  color: $color-black;
+  background-color: $color-white;
 }
 
 a {
@@ -49,6 +50,10 @@ a {
   outline: none;
   text-decoration: none;
   font-family: $font-c;
+
+  &:hover {
+    color: $color-theme;
+  }
 }
 
 canvas {
@@ -78,6 +83,12 @@ img {
 
 .content {
   @extend %scrolljeck;
+  transition: all 1s $ease-in-out;
+  transform: translateY(0);
+
+  &.active {
+    transform: translateY(100%) !important;
+  }
 }
 
 [data-animation="label"],
