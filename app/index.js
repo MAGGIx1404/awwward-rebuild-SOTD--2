@@ -1,6 +1,7 @@
 import Home from "pages/Home";
 import About from "pages/About";
 import Contact from "pages/Contact";
+import Portfolio from "pages/Portfolio";
 import Preloader from "components/Preloader";
 // import Transition from "components/Transition";
 import each from "lodash/each";
@@ -64,7 +65,8 @@ class App {
     this.pages = {
       home: new Home(),
       about: new About(),
-      contact: new Contact()
+      contact: new Contact(),
+      portfolio: new Portfolio()
     };
 
     this.page = this.pages[this.template];
