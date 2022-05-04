@@ -9,18 +9,120 @@ block body
             img(data-src="/btn-1.jpg", alt="error")
         //- Scroll wrapper
         .portfolio__wrapper
+            //- layer changer
+            .layer__changer__wrapper
+                button.layer__changer All Projects
             .portfolio__banner
-                .portfolio__banner__inner
+                //- slider
+                .portfolio__banner__inner.slider__wrapper
                     ul.portfolio__list
                         li.portfolio__item
-                            h1 1
+                            a.portfolio__link(href="/" data-link="1")
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/1-hero.webp", alt="Work Picture")
                         li.portfolio__item
-                            h1 2
+                            a.portfolio__link(href="/" data-link="2")
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/2-hero.webp", alt="Work Picture")
                         li.portfolio__item
-                            h1 3
+                            a.portfolio__link(href="/" data-link="3")
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/3-hero.webp", alt="Work Picture")
                         li.portfolio__item
-                            h1 4
+                            a.portfolio__link(href="/" data-link="4")
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/4-hero.webp", alt="Work Picture")
                         li.portfolio__item
-                            h1 5
+                            a.portfolio__link(href="/" data-link="5")
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/5-hero.webp", alt="Work Picture")
                         li.portfolio__item
-                            h1 6
+                            a.portfolio__link(href="/" data-link="6")
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/6-hero.webp", alt="Work Picture")
+
+                    //- sliders title
+                    .slides__titles__wrapper
+                        .slides__title__wrapper(data-hover="1")
+                            h1.mini-title.splitter!=portfolio.data.work_1[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_1[0].paragraph.replace(/\n/g,"</br>")
+                        .slides__title__wrapper(data-hover="2")
+                            h1.mini-title.splitter!=portfolio.data.work_2[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_2[0].paragraph.replace(/\n/g,"</br>")
+                        .slides__title__wrapper(data-hover="3")
+                            h1.mini-title.splitter!=portfolio.data.work_3[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_3[0].paragraph.replace(/\n/g,"</br>")
+                        .slides__title__wrapper(data-hover="4")
+                            h1.mini-title.splitter!=portfolio.data.work_4[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_4[0].paragraph.replace(/\n/g,"</br>")
+                        .slides__title__wrapper(data-hover="5")
+                            h1.mini-title.splitter!=portfolio.data.work_5[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_5[0].paragraph.replace(/\n/g,"</br>")
+                        .slides__title__wrapper(data-hover="6")
+                            h1.mini-title.splitter!=portfolio.data.work_6[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_6[0].paragraph.replace(/\n/g,"</br>")
+                //- infinite list
+                .portfolio__banner__list.infinite__list__wrapper
+                    .portfolio__banner__list__inner
+                        ul.infinite__list.infinite__drive__list
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].one
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].two
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].three
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].four
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].five
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].six
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].one
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].two
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].three
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].four
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].five
+                            li.infinite__list__item
+                                a.infinite__list__text(href="/")=portfolio.data.list[0].six
+                        ul.infinite__list.infinite__reverse__list
+                            li.infinite__reversed__list__item
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/1-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.center
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/2-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.end
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/3-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.center
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/4-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.end
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/5-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.center
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/6-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/1-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.end
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/2-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.center
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/3-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/4-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.end
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/5-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.center
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/6-hero.webp", alt="errror")
