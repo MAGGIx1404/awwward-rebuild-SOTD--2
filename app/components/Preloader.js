@@ -11,7 +11,8 @@ export default class Preloader extends Component {
         title: ".preloader__text",
         number: ".preloader__number",
         images: document.querySelectorAll("img"),
-        numberText: ".preloader__number__text"
+        numberText: ".preloader__number__text",
+        preloaderText: ".preloader__text__wrapper h1"
       }
     });
 
@@ -49,12 +50,16 @@ export default class Preloader extends Component {
         y: "100%",
         stagger: "0.1",
         duration: 1.5,
-        ease: "expo.out"
+        ease: "ease.out"
+      });
+      this.animateOut.to(this.elements.preloaderText, 1, {
+        y: "100%",
+        ease: "ease.out"
       });
       this.animateOut.to(this.element, {
-        opacity: 0,
+        y: "-100%",
         duration: 1,
-        ease: "expo.out"
+        ease: "ease.out"
       });
 
       this.animateOut.call(() => {

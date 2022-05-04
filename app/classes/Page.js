@@ -179,11 +179,10 @@ export default class Page {
    */
   async hide() {
     return new Promise((resolve) => {
+      this.element.classList.remove(this.classes.active);
       each(this.animations, (animation) => {
         animation.animateOut();
       });
-      this.element.classList.remove(this.classes.active);
-
       this.destroy();
       window.ASSETS = [];
       this.animateOut = gsap.timeline();

@@ -6,11 +6,35 @@
   text-align: center;
   z-index: 201;
   will-change: transform;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
   padding: 5vw;
   position: relative;
+  @extend %flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.preloader__wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  @extend %center;
+
+  .preloader__text__wrapper {
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+
+    h1 {
+      font-size: 8rem;
+      font-weight: 500;
+      font-family: $font-a;
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+  }
 }
 
 .preloader__number {

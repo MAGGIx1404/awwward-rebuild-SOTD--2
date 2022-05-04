@@ -7,14 +7,16 @@ import Ukiyo from "ukiyojs";
 import { TimelineMax } from "gsap/gsap-core";
 import GLSlideshow from "GLSlideshow";
 
-import imgOne from "../../../shared/heroes/home-hero.jpg";
+import imgOne from "../../../shared/heroes/home-hero-4.jpg";
 import imgTwo from "../../../shared/heroes/home-hero-2.jpg";
 import imgThree from "../../../shared/heroes/home-hero-3.jpg";
+import imgFour from "../../../shared/heroes/home-hero.jpg";
 
 const images = {
   imgOne,
   imgTwo,
-  imgThree
+  imgThree,
+  imgFour
 };
 
 export default class Home extends Page {
@@ -112,7 +114,7 @@ export default class Home extends Page {
 
   slider() {
     this.slideShow = new GLSlideshow(
-      [images.imgOne, images.imgTwo, images.imgThree],
+      [images.imgOne, images.imgTwo, images.imgFour, images.imgThree],
       {
         canvas: document.getElementById("webgl-container"), // optional
         width: window.innerWidth,

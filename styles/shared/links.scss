@@ -91,6 +91,7 @@
   letter-spacing: 1px;
   line-height: 1.2;
   position: relative;
+  transition: color 0.5s ease;
 
   &::after {
     content: "";
