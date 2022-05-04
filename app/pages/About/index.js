@@ -17,7 +17,8 @@ export default class About extends Page {
       elements: {
         wrapper: ".about__wrapper", // scroller
         links_wrapper: ".about__title__link",
-        about__pics: ".parallax__image"
+        about__pics: ".parallax__image",
+        images: ".parallax__image__slow"
       }
     });
   }
@@ -39,10 +40,10 @@ export default class About extends Page {
     });
 
     // this.imgSlow.forEach((ele) => {
-    //   this.parallaxEffectSlow = new Ukiyo(ele, {
-    //     speed: 1.8,
-    //     scale: 1.1
-    //   });
+    this.parallaxEffectSlow = new Ukiyo(this.elements.images, {
+      speed: 2,
+      scale: 1.4
+    });
     // });
   }
 

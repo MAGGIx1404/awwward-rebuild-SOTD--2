@@ -5,7 +5,7 @@ import each from "lodash/each";
 import map from "lodash/map";
 import Prefix from "prefix";
 import gsap from "gsap";
-import { Expo } from "gsap/all";
+import { Expo, Power2 } from "gsap/all";
 import { mapEach } from "utils/dom";
 import Paragraph from "animations/Paragraph";
 import Parallax from "animations/Parallax";
@@ -27,7 +27,7 @@ export default class Page {
       animationsParallax: '[data-animation="parallax"]',
       animationsFadeIn: '[data-animation="p-fade-in"]',
       imagePreloaders: "[data-src]",
-      overlayLines: ".overlay__line",
+      transition: "#path",
 
       ...elements
     };
@@ -142,10 +142,6 @@ export default class Page {
     if (onPreloaded) {
       return new Promise((resolve) => {
         this.animationIn = gsap.timeline();
-        this.animationIn.set(this.selectorChildren.overlayLines, {
-          scaleX: 0,
-          opacity: 0
-        });
         this.animationIn.call(() => {
           this.element.classList.add(this.classes.active);
           this.addEventListeners();
@@ -155,14 +151,9 @@ export default class Page {
     } else {
       return new Promise((resolve) => {
         this.animationIn = gsap.timeline();
-        this.animationIn.set(this.selectorChildren.overlayLines, {
-          transformOrigin: "right"
-        });
-        this.animationIn.to(this.selectorChildren.overlayLines, 0.4, {
-          scaleX: 0,
-          opacity: 1,
-          stagger: 0.1,
-          ease: "Power2.easeIn"
+        this.animationIn.to(this.selectorChildren.transition, 0.5, {
+          opacity: 0,
+          ease: Power2.easeIn
         });
         this.animationIn.call(() => {
           this.element.classList.add(this.classes.active);
@@ -186,17 +177,27 @@ export default class Page {
       this.destroy();
       window.ASSETS = [];
       this.animateOut = gsap.timeline();
-      this.animateOut.set(this.selectorChildren.overlayLines, {
-        transformOrigin: "left",
-        scaleX: 0,
+      const start = "M 0 100 V 50 Q 50 0 100 50 V 100 z";
+      const end = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
+      this.animateOut.set(this.selectorChildren.transition, {
+        attr: {
+          d: "M 0 100 V 100 Q 50 100 100 100 V 100 Z"
+        },
         opacity: 1
       });
-      this.animateOut.to(this.selectorChildren.overlayLines, 0.4, {
-        scaleX: 1,
-        opacity: 1,
-        stagger: 0.1,
-        ease: "Power2.easeOut"
+      this.animateOut.to(this.selectorChildren.transition, 0.8, {
+        attr: {
+          d: start
+        },
+        ease: Power2.easeIn
       });
+      this.animateOut.to(this.selectorChildren.transition, 0.4, {
+        attr: {
+          d: end
+        },
+        ease: Power2.easeOut
+      });
+
       this.animateOut.call(() => {
         resolve();
       });

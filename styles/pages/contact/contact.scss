@@ -1,0 +1,166 @@
+.contact {
+  background-color: $color-white;
+  opacity: 1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transition: opacity 0.8s $ease-in-out;
+  will-change: opacity;
+
+  &--active {
+    opacity: 1;
+
+    .contact__picture__wrapper__inner {
+      &::after {
+        transform: scaleX(0);
+      }
+    }
+    .contact__infinite__text__wrapper {
+      opacity: 1 !important;
+    }
+  }
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+.contact__wrapper {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  overflow: hidden;
+  will-change: transform;
+  background-color: $color-white;
+}
+
+.contact__banner {
+  width: 100%;
+  height: 100vh;
+  max-height: fit-content;
+  position: relative;
+
+  &__inner {
+    @extend %innerSection;
+    overflow: visible !important;
+    position: relative;
+    height: 100vh;
+
+    .contact__content__wrapper {
+      width: 100%;
+      height: fit-content;
+
+      .contact__infinite__text__wrapper {
+        width: 100%;
+        height: fit-content;
+        position: absolute;
+        top: 40%;
+        transform: translateY(-40%);
+        opacity: 0;
+        transition: all 1.5s $ease-in-out;
+
+        h1 {
+          line-height: 1;
+          width: 460rem;
+          text-shadow: 460rem 0 currentColor;
+          animation: move 20s linear infinite;
+        }
+      }
+
+      .contact__main__content {
+        width: 100%;
+        height: fit-content;
+        @extend %flex-row-space;
+        align-items: flex-end;
+        position: absolute;
+        bottom: 10vh;
+
+        .contact__main__right,
+        .contact__main__left {
+          width: fit-content;
+          height: fit-content;
+
+          a {
+            font-weight: 500;
+          }
+        }
+
+        .contact__main__left {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+
+          p {
+            margin-bottom: 6rem;
+          }
+
+          a {
+            margin-top: 2rem;
+          }
+        }
+
+        .contact__main__right {
+          p {
+            margin-bottom: 5rem;
+          }
+        }
+      }
+    }
+
+    .contact__picture__wrapper {
+      width: 100%;
+      height: fit-content;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-left: 20vw;
+      @extend %center;
+
+      figure {
+        width: 25vw;
+        height: fit-content;
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+          content: "";
+          background: $color-white;
+          position: absolute;
+          top: -10%;
+          left: -10%;
+          width: 120%;
+          height: 120%;
+          z-index: 2;
+          transform-origin: left;
+          transition: all 1s $ease-in-out;
+        }
+
+        img {
+          width: 100%;
+          height: fit-content;
+          object-fit: cover;
+          opacity: 0;
+        }
+
+        canvas {
+          width: 100%;
+          height: 100%;
+          background-color: rgba($color: #000000, $alpha: 0.3);
+        }
+      }
+    }
+  }
+}

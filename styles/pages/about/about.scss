@@ -1,6 +1,6 @@
 .about {
-  background-color: $color-black;
-  opacity: 0;
+  background-color: $color-white;
+  opacity: 1;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -25,6 +25,7 @@
 
     .about__banner__bg__wrapper {
       transform: translateY(0%) !important;
+      transition-delay: -1s;
     }
   }
 
@@ -56,7 +57,6 @@
   padding: 50vh 0 15vh 0;
   position: relative;
   color: $color-black;
-  background: $color-black;
 
   &__inner {
     @extend %innerSection;
@@ -124,7 +124,6 @@
       height: 100%;
       transform: translateY(100%);
       transition: all 2s $ease-in-out;
-      transition-delay: -1s;
       outline: none;
       border: none;
 
@@ -333,8 +332,8 @@
 
           h1 {
             width: 234rem;
-            text-shadow: 234rem 0 $color-white, calc(234rem * 2) 0 $color-white,
-              calc(234rem * 3) 0 $color-white;
+            text-shadow: 234rem 0 currentColor, calc(234rem * 2) 0 currentColor,
+              calc(234rem * 3) 0 currentColor;
             animation: move 10s linear infinite;
           }
         }
@@ -404,6 +403,190 @@
           color: rgba($color: $color-black, $alpha: 0.8);
           border-top: 1px solid rgba($color: $color-black, $alpha: 0.5);
           padding: 3rem 2rem 0 0;
+        }
+      }
+    }
+  }
+}
+
+.about__screen {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.about__exorse {
+  @extend %section;
+  background-color: $color-gray;
+  color: $color-white;
+  padding: 20vh 0;
+
+  &__inner {
+    @extend %innerSection;
+
+    .about__exorse__content__wrapper {
+      width: 100%;
+      height: fit-content;
+      position: relative;
+      @extend %flex-row-space;
+
+      .about__exorse__left {
+        flex: 0 0 30%;
+        max-width: 30%;
+        width: 100%;
+        height: fit-content;
+      }
+
+      .about__exorse__right {
+        flex: 0 0 70%;
+        max-width: 70%;
+        width: 100%;
+        height: fit-content;
+        position: relative;
+
+        p {
+          margin-top: 8rem;
+        }
+      }
+    }
+
+    .about__exorse__gallery {
+      width: 100%;
+      height: fit-content;
+      position: relative;
+      @extend %flex-row-space;
+
+      .about__exorse__pic__box {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        blockquote {
+          border-top: 1px solid rgba($color: $color-white, $alpha: 0.4);
+          color: rgba($color: $color-white, $alpha: 0.5);
+          padding-top: 4rem;
+          margin-top: 7rem;
+          font-weight: 400;
+          width: 100%;
+        }
+
+        &:nth-of-type(1) {
+          figure {
+            width: 40vw;
+            height: fit-content;
+          }
+        }
+
+        figure {
+          width: 100%;
+          height: fit-content;
+
+          img {
+            width: 100%;
+            height: fit-content;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+.about__recognition {
+  @extend %section;
+  padding: 20vh 0;
+
+  &__inner {
+    @extend %innerSection;
+
+    .about__recognition__content__wrapper {
+      width: 100%;
+      height: fit-content;
+      position: relative;
+      @extend %flex-row-space;
+
+      .about__recognition__left {
+        flex: 0 0 30%;
+        max-width: 30%;
+        width: 100%;
+        height: fit-content;
+      }
+
+      .about__recognition__right {
+        flex: 0 0 70%;
+        max-width: 70%;
+        width: 100%;
+        height: fit-content;
+        position: relative;
+
+        h1 {
+          line-height: 1;
+        }
+
+        .awards__wrapper {
+          width: 100%;
+          height: fit-content;
+          margin-top: 8rem;
+          @extend %flex-row-space;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 14vw;
+
+          ul {
+            width: fit-content;
+            height: fit-content;
+
+            &.win__list {
+              li {
+                padding-bottom: 3rem;
+                p {
+                  color: rgba($color: $color-black, $alpha: 0.5);
+                  font-weight: 500;
+                }
+                a {
+                  font-weight: 500;
+                  color: rgba($color: $color-black, $alpha: 0.5);
+                }
+              }
+            }
+
+            &.awards__list {
+              width: 25%;
+              li {
+                padding: 1rem 0;
+                p {
+                  font-size: 3rem;
+                  line-height: 1;
+                  font-weight: 400;
+                  @extend %flex-row-space;
+                  width: 100%;
+
+                  span.number {
+                    font-size: 2rem;
+                    font-weight: 300;
+                    line-height: 1;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

@@ -1,0 +1,29 @@
+extends ../base.pug
+
+block variables
+    - var template = 'contact'
+
+block body
+    .contact(data-background="" data-color="")
+        //- Scroll wrapper
+        .contact__wrapper
+            .contact__banner
+                .contact__banner__inner
+                    .contact__content__wrapper
+                        .contact__infinite__text__wrapper
+                            h1.title_2.contact__infinite__text Get in touch · Ponerse en contacto · Neem contact op ·
+                        .contact__main__content
+                            .contact__main__left
+                                p.small-paragraph!=contact.data.banner[0].paragraph.replace(/\n/g,"</br>")
+                                a.btn_1.main__btn.no-transition(href="/")!=contact.data.banner[0].btn_1.replace(/\n/g,"</br>")
+                                a.btn_1.main__btn.no-transition(href="/")!=contact.data.banner[0].btn_2.replace(/\n/g,"</br>")
+                            .contact__main__right
+                                p.small-paragraph!=contact.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
+                                a.btn_1.main__btn.no-transition(href="/")!=contact.data.banner[0].btn_3.replace(/\n/g,"</br>")
+                    .contact__picture__wrapper
+                        figure.contact__picture__wrapper__inner
+                            img.contact__picture(data-src="/heroes/contact-hero.webp", alt="Contact Picture")
+                            canvas.webgl__container#webgl__container
+
+            //- footer
+            include ../partials/footer

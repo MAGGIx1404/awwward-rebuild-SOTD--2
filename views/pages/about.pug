@@ -81,3 +81,65 @@ block body
                             p.paragraph(data-animation="paragraph")!=about.data.believe[0].paragraph.replace(/\n/g,"</br>")
                             p.paragraph(data-animation="paragraph")!=about.data.believe[0].paragraph_2.replace(/\n/g,"</br>")
                             blockquote.small-text(data-animation="paragraph")!=about.data.believe[0].paragraph_3.replace(/\n/g,"</br>")
+
+            //- screen
+            .about__screen
+                figure.about__screen__wrapper
+                    img.about__screen__pic.parallax__image__slow(data-src="/about-screen.jpg", alt="screen Picture")
+
+            //- exorse
+            .about__exorse
+                .about__exorse__inner
+                    .about__exorse__content__wrapper
+                        .about__exorse__left
+                            h6.heading(data-animation="paragraph")!=about.data.apes[0].heading.replace(/\n/g,"</br>")
+                        .about__exorse__right
+                            h1.title_2(data-animation="paragraph")!=about.data.apes[0].title.replace(/\n/g,"</br>")
+                            p.paragraph(data-animation="paragraph")!=about.data.apes[0].paragraph.replace(/\n/g,"</br>")
+                    .about__exorse__gallery
+                        .about__exorse__pic__box(data-scroll data-scroll-speed="-1")
+                            figure.about__exorse__pic__wrapper
+                                img.about__exorse__img(data-src="/exorse-1.webp", alt="picture")
+                        .about__exorse__pic__box(data-scroll data-scroll-speed="2")
+                            figure.about__exorse__pic__wrapper
+                                img.about__exorse__img(data-src="/exorse-2.webp", alt="picture")
+                            blockquote.small-text(data-animation="paragraph")!=about.data.apes[0].paragraph_2.replace(/\n/g,"</br>")
+
+            //- recognition
+            .about__recognition
+                .about__recognition__inner
+                    .about__recognition__content__wrapper
+                        .about__recognition__left
+                            h6.heading(data-animation="paragraph")!=about.data.recognition[0].heading.replace(/\n/g,"</br>")
+                        .about__recognition__right
+                            h1.title_2(data-animation="paragraph")!=about.data.recognition[0].title.replace(/\n/g,"</br>")
+                            .awards__wrapper
+                                ul.win__list
+                                    li.win__item
+                                        p.paragraph(data-animation="paragraph") Studio of the year
+                                        p.paragraph(data-animation="paragraph") Nominee '20
+                                        a.btn_1.main__btn.no-transition(href="https://www.awwwards.com/" target="blank" data-animation="paragraph") Awwwards
+                                    li.win__item
+                                        p.paragraph(data-animation="paragraph") Ali Ali
+                                        p.paragraph(data-animation="paragraph") Site of the Month
+                                        a.btn_1.main__btn.no-transition(href="https://www.awwwards.com/" target="blank" data-animation="paragraph") Awwwards
+                                    li.win__item
+                                        p.paragraph(data-animation="paragraph") Ottografie
+                                        p.paragraph(data-animation="paragraph") Photography site of the Year
+                                        a.btn_1.main__btn.no-transition(href="https://www.cssdesignawards.com/" target="blank" data-animation="paragraph") CSSDA
+                                ul.awards__list
+                                    li.awards__item
+                                        p.text Awwwards #[span.number x15]
+                                    li.awards__item
+                                        p.text The FWA #[span.number x06]
+                                    li.awards__item
+                                        p.text CSSDA #[span.number x06]
+                                    li.awards__item
+                                        p.text Behance #[span.number x21]
+                                    li.awards__item
+                                        p.text Commarts #[span.number x03]
+                                    li.awards__item
+                                        p.text Typewolf #[span.number x02]
+
+            //- footer
+            include ../partials/footer

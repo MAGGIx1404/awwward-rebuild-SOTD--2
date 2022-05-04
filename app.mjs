@@ -87,17 +87,17 @@ app.get("/about", async (req, res) => {
 //   });
 // });
 
-// // Contact page
-// app.get("/contact", async (req, res) => {
-//   // const defaults = await handleRequest(client);
-//   const contact = await client.getSingle("contact");
-//   const assets = [];
-//   return res.render("pages/contact", {
-//     contact,
-//     // ...defaults,
-//     assets
-//   });
-// });
+// Contact page
+app.get("/contact", async (req, res) => {
+  const defaults = await handleRequest(client);
+  const contact = await client.getSingle("contact");
+  const assets = [];
+  return res.render("pages/contact", {
+    contact,
+    ...defaults,
+    assets
+  });
+});
 
 // app.get("/work/:uid", async (req, res) => {
 //   const uid = req.params.uid;
