@@ -39,7 +39,43 @@
 
 .portfolio__banner {
   width: 100%;
-  height: fit-content;
-  max-height: fit-content;
+  height: 100vh;
+  max-height: 100vh;
   position: relative;
+
+  &__inner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+// slider
+
+ul.portfolio__list {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  li.portfolio__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 20vw;
+    height: 100%;
+    overflow: hidden;
+    @extend %center;
+    padding: 0 5vw;
+
+    h1 {
+      background-color: red;
+      width: 100%;
+    }
+  }
 }
