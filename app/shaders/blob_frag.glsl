@@ -44,6 +44,9 @@ vec3 random3(vec3 c) {
 	r.y = fract(512.0*j);
 	return r-0.5;
 }
+
+// slider cordinates
+
 const float F3 =  0.3333333;
 const float G3 =  0.1666667;
 float simplex3d(vec3 p) {

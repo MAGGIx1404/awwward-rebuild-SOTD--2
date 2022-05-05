@@ -277,7 +277,7 @@ export default class Portfolio extends Page {
     dispose(0);
 
     const handleMouseWheel = (e) => {
-      scrollY -= e.deltaY * 3;
+      scrollY -= e.deltaY * 2;
     };
 
     let touchStart = 0;
@@ -291,7 +291,7 @@ export default class Portfolio extends Page {
     const handleTouchMove = (e) => {
       if (!isDragging) return;
       touchY = e.clientY || e.touches[0].clientY;
-      scrollY += (touchY - touchStart) * 10;
+      scrollY += (touchY - touchStart) * 6;
       touchStart = touchY;
     };
     const handleTouchEnd = () => {
@@ -322,11 +322,15 @@ export default class Portfolio extends Page {
 
     const render = () => {
       requestAnimationFrame(render);
-      y = lerp(y, scrollY, 0.04);
+      y = lerp(y, scrollY, 0.02);
       dispose(y);
 
       scrollSpeed = y - oldScrollY;
       oldScrollY = y;
+
+      gsap.to(this.elements.reverse_items, {
+        skewY: scrollSpeed * 0.1
+      });
     };
     render();
   }
@@ -338,12 +342,24 @@ export default class Portfolio extends Page {
     const topSlider = this.elements.topSlider;
     const bottomSlider = this.elements.bottomSlider;
 
+    const links = [...document.querySelectorAll("a")];
+
     layerBtn.addEventListener("click", function () {
       layerBtn.classList.toggle("active");
       reverseList.classList.toggle("active");
       driveList.classList.toggle("active");
       topSlider.classList.toggle("active");
       bottomSlider.classList.toggle("active");
+    });
+
+    links.forEach((el) => {
+      el.addEventListener("click", function () {
+        layerBtn.classList.remove("active");
+        reverseList.classList.remove("active");
+        driveList.classList.remove("active");
+        topSlider.classList.remove("active");
+        bottomSlider.classList.remove("active");
+      });
     });
   }
 }
