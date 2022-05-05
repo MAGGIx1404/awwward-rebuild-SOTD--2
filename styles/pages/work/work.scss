@@ -255,4 +255,165 @@
 
 .work__solution {
   @extend %section;
+
+  &__inner {
+    @extend %innerSection;
+    height: 100vh;
+    @extend %center;
+
+    .work__solution__content__wrapper {
+      width: 100%;
+      height: fit-content;
+      @extend %flex-row-space;
+      align-items: flex-start;
+
+      .work__solution__content__left {
+        flex: 0 0 30%;
+        max-width: 30%;
+        width: 100%;
+        height: fit-content;
+      }
+      .work__solution__content__right {
+        flex: 0 0 70%;
+        max-width: 70%;
+        width: 100%;
+        height: fit-content;
+
+        p {
+          color: rgba($color: $color-black, $alpha: 0.7);
+
+          &:not(:nth-of-type(1)) {
+            margin-top: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.work__reel {
+  @extend %section;
+  background: rgba($color: $color-theme, $alpha: 0.5);
+
+  &__inner {
+    @extend %innerSection;
+    height: 100vh;
+    @extend %center;
+
+    video {
+      width: 80%;
+      height: fit-content;
+      pointer-events: none;
+    }
+  }
+}
+
+.work__design {
+  @extend %section;
+  background: rgba($color: $color-theme, $alpha: 0.5);
+
+  &__inner {
+    @extend %innerSection;
+    height: fit-content;
+    @extend %center;
+    padding: 5vh 0;
+
+    figure {
+      width: 80%;
+      height: fit-content;
+      pointer-events: none;
+
+      img {
+        width: 100%;
+        height: fit-content;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.work__special {
+  @extend %section;
+  background: rgba($color: $color-theme, $alpha: 0.5);
+  padding: 20vh 0;
+
+  &__inner {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+    @extend %flex-row-space;
+    align-items: flex-start;
+
+    .work__special__left__wrapper,
+    .work__special__right__wrapper {
+      flex: 0 0 50%;
+      max-width: 50%;
+      width: 100%;
+      height: fit-content;
+      overflow: hidden;
+      position: relative;
+    }
+    .work__special__left__wrapper {
+      padding: 5vh 2.5vw 5vh 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+
+      figure {
+        width: fit-content;
+        height: fit-content;
+
+        img {
+          width: fit-content;
+          height: fit-content;
+          object-fit: cover;
+        }
+      }
+    }
+    .work__special__right__wrapper {
+      padding: 5vh 0 5vh 2.5vw;
+
+      p {
+        margin-top: 6rem;
+      }
+
+      figure {
+        width: fit-content;
+        height: fit-content;
+        margin-top: 50vh;
+
+        img {
+          width: fit-content;
+          height: fit-content;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+.work__screen {
+  @extend %section;
+
+  &__inner {
+    width: 100%;
+    height: 120vh;
+    position: relative;
+    overflow: hidden;
+
+    figure {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }

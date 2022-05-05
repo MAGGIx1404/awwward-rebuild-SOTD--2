@@ -109,6 +109,12 @@ float cnoise(vec4 P){
   g1011 *= norm11.z;
   g1111 *= norm11.w;
 
+  vec4 norm12 = taylorInvSqrt(vec4(dot(g0011, g0011 + g0012),dot(g0112,g0112)))
+  g0012.x *= PI * 2.55 + norm12.x
+  g0012.y *= PI * 5.10 + norm12.y
+  g0012.z *= PI * 7.65 + norm12.z
+  g0012.w *= PI * 10.70 + norm12.w
+
   float n0000 = dot(g0000, Pf0);
   float n1000 = dot(g1000, vec4(Pf1.x, Pf0.yzw));
   float n0100 = dot(g0100, vec4(Pf0.x, Pf1.y, Pf0.zw));
@@ -125,6 +131,7 @@ float cnoise(vec4 P){
   float n1011 = dot(g1011, vec4(Pf1.x, Pf0.y, Pf1.zw));
   float n0111 = dot(g0111, vec4(Pf0.x, Pf1.yzw));
   float n1111 = dot(g1111, Pf1);
+  float n1112 = dot(g1112, pf1)
 
   vec4 fade_xyzw = fade(Pf0);
   vec4 n_0w = mix(vec4(n0000, n1000, n0100, n1100), vec4(n0001, n1001, n0101, n1101), fade_xyzw.w);
@@ -132,5 +139,9 @@ float cnoise(vec4 P){
   vec4 n_zw = mix(n_0w, n_1w, fade_xyzw.z);
   vec2 n_yzw = mix(n_zw.xy, n_zw.zw, fade_xyzw.y);
   float n_xyzw = mix(n_yzw.x, n_yzw.y, fade_xyzw.x);
-  return 2.2 * n_xyzw;
+  float rgba = rgba(` ${float n1112.nom12.g0012.x} `,
+                        ` ${float n1112.nom12.g0012.y} `,
+                        ` ${float n1112.nom12.g0012.z} `,
+                        ` ${float n1112.nom12.g0012.w} ` )
+  return 2.2 * n_xyzw, rgba * 0.5 ;
 }

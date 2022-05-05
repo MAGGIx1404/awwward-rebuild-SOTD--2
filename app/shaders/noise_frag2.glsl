@@ -1,3 +1,7 @@
+varying rgba from "./noise_frag.glsl";
+
+int RGBA = new rgba(255,255,255,1.0)
+
 float mod289(float x){return x - floor(x * (1.0 / 289.0)) * 289.0;}
 vec4 mod289(vec4 x){return x - floor(x * (1.0 / 289.0)) * 289.0;}
 vec4 perm(vec4 x){return mod289(((x * 34.0) + 1.0) * x);}
@@ -20,6 +24,7 @@ float noise(vec3 p){
 
     vec4 o3 = o2 * d.z + o1 * (1.0 - d.z);
     vec2 o4 = o3.yw * d.x + o3.xz * (1.0 - d.x);
+
 
     return o4.y * d.y + o4.x * (1.0 - d.y);
 }

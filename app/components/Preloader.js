@@ -2,6 +2,7 @@ import Component from "classes/Component";
 import each from "lodash/each";
 import gsap from "gsap";
 import { split } from "utils/text";
+import { Power2 } from "gsap/all";
 
 export default class Preloader extends Component {
   constructor() {
@@ -12,7 +13,8 @@ export default class Preloader extends Component {
         number: ".preloader__number",
         images: document.querySelectorAll("img"),
         numberText: ".preloader__number__text",
-        preloaderText: ".preloader__text__wrapper h1"
+        preloaderText: ".preloader__text__wrapper h1",
+        path: "#path_main"
       }
     });
 
@@ -46,6 +48,8 @@ export default class Preloader extends Component {
       this.animateOut = gsap.timeline({
         delay: 0
       });
+      const start = "M 0 100 V 50 Q 50 0 100 50 V 100 z";
+      const end = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
       this.animateOut.to(this.elements.numberText, {
         y: "100%",
         stagger: "0.1",
@@ -56,12 +60,27 @@ export default class Preloader extends Component {
         y: "100%",
         ease: "ease.out"
       });
-      this.animateOut.to(this.element, {
-        y: "-100%",
-        duration: 1,
-        ease: "ease.out"
+      this.animateOut.to(this.elements.path, 0.8, {
+        attr: {
+          d: start
+        },
+        ease: Power2.easeIn
       });
-
+      this.animateOut.to(this.elements.path, 0.4, {
+        attr: {
+          d: end
+        },
+        ease: Power2.easeOut
+      });
+      this.animateOut.to(
+        this.element,
+        {
+          alpha: 0,
+          opacity: 0,
+          duration: 0.5
+        },
+        "-=0.2"
+      );
       this.animateOut.call(() => {
         this.emit("completed");
       });

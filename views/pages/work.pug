@@ -3,7 +3,8 @@ extends ../base.pug
 mixin image({name,pic})
     img(data-src=`/works/${name}/${pic}`)
 
-
+mixin video({name,reel})
+    video(src=`/works/${name}/${reel}` autoplay muted loop)
 
 block variables
     - var template = 'work'
@@ -92,3 +93,65 @@ block body
 
             //- solution
             .work__solution
+                .work__solution__inner
+                    .work__solution__content__wrapper
+                        .work__solution__content__left
+                            h6.heading(data-animation="paragraph")!=work.data.solutions[0].heading.replace(/\n/g,"</br>")
+                        .work__solution__content__right
+                            p.small-paragraph(data-animation="paragraph")!=work.data.solutions[0].paragraph.replace(/\n/g,"</br>")
+                            p.small-paragraph(data-animation="paragraph")!=work.data.solutions[0].paragraph_2.replace(/\n/g,"</br>")
+
+            //- reel 1
+            .work__reel
+                .work__reel__inner
+                    +video({
+                        name:id,
+                        reel: 'reel-1.mp4'
+                    })
+
+            //- design
+            .work__design
+                .work__design__inner
+                    figure.work__design__pic__wrapper
+                        +image({
+                            name:id,
+                            pic:'design-1.webp'
+                        })
+
+            //- specials
+            .work__special
+                .work__special__inner
+                    .work__special__left__wrapper
+                        figure.work__special__pic__wrapper
+                            +image({
+                                name:id,
+                                pic:'special-left.webp'
+                            })
+                    .work__special__right__wrapper
+                        .work__special__content__wrapper
+                            h6.heading!=work.data.special[0].heading.replace(/\n/g,"</br>")
+                            p.small-paragraph!=work.data.special[0].paragraph.replace(/\n/g,"</br>")
+                        figure.work__special__pic__wrapper
+                            +image({
+                                name:id,
+                                pic:'special-right.webp'
+                            })
+
+            //- screen
+            .work__screen
+                .work__screen__inner
+                    figure.work__screen__pic__wrapper
+                        +image({
+                            name:id,
+                            pic:'screen.webp'
+                        })
+
+            //- special 2
+            .work__special__two
+                .work__special__two__inner
+                    .work__special__two__content__wrapper
+                        .work__special__two__content__left
+                            h6.heading!=work.data.special_two[0].heading.replace(/\n/g,"</br>")
+                        .work__special__two__content__right
+                            h1.title_2!=work.data.special_two[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph!=work.data.special_two[0].heading.replace(/\n/g,"</br>")
