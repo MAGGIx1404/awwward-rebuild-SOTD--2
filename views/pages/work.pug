@@ -16,34 +16,79 @@ block body
             .work__banner
                 .work__banner__inner
                     .work__banner__content__wrapper
-                        .work__banner__title__Wrapper
+                        .work__banner__title__wrapper
                             .work__banner__title__left
                                 h1.title_2!=work.data.banner[0].title.replace(/\n/g,"</br>")
                                 p.small-paragraph!=work.data.banner[0].paragraph.replace(/\n/g,"</br>")
                             .work__banner__title__right
                                 a.link.btn_1.main__btn(href="/")!=work.data.banner[0].link.replace(/\n/g,"</br>")
                         .work__banner__main__content
-                            p.big__paragraph!=work.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
+                            p.big__paragraph(data-animation="paragraph")!=work.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
                             .info__lists__wrapper
                                 ul.info__list
                                     each item in work.data.banner[0].client
                                         li.info__item
-                                            p.paragraph=item.text
+                                            p.small-paragraph(data-animation="paragraph")=item.text
                                 ul.info__list
                                     each item in work.data.banner[0].services
                                         li.info__item
-                                            p.paragraph=item.text
+                                            p.small-paragraph(data-animation="paragraph")=item.text
                                 ul.info__list
                                     each item in work.data.banner[0].industries
                                         li.info__item
-                                            p.paragraph=item.text
+                                            p.small-paragraph(data-animation="paragraph")=item.text
                                 ul.info__list
                                     each item in work.data.banner[0].date
                                         li.info__item
-                                            p.paragraph=item.text
+                                            p.small-paragraph(data-animation="paragraph")=item.text
+                //- bg wrapper
                 .work__banner__bg
                     figure.work__banner__bg__wrapper
                         +image({
                             name: id,
                             pic:'banner.webp'
                             })
+
+            //- objectives
+            .work__objectives
+                .work__objectives__inner
+                    .work__objectives__content__wrapper
+                        .work__objectives__left
+                            h6.heading(data-animation="paragraph")!=work.data.objectives[0].heading.replace(/\n/g,"</br>")
+                        .work__objectives__right
+                            h1.title_2(data-animation="paragraph")!=work.data.objectives[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph(data-animation="paragraph")!=work.data.objectives[0].paragraph.replace(/\n/g,"</br>")
+                            p.small-paragraph(data-animation="paragraph")!=work.data.objectives[0].paragraph_2.replace(/\n/g,"</br>")
+
+            //- grid section
+            .work__grid
+                .work__grid__inner
+                    .work__grid__wrapper
+                        figure.grid__item.grid__item__one
+                            +image({
+                                name: id,
+                                pic: 'grid-1.webp'
+                            })
+                        figure.grid__item.grid__item__two
+                            +image({
+                                name: id,
+                                pic: 'grid-2.webp'
+                            })
+                        figure.grid__item.grid__item__three
+                            +image({
+                                name: id,
+                                pic: 'grid-3.webp'
+                            })
+                        figure.grid__item.grid__item__four
+                            +image({
+                                name: id,
+                                pic: 'grid-4.webp'
+                            })
+                        figure.grid__item.grid__item__five
+                            +image({
+                                name: id,
+                                pic: 'grid-5.webp'
+                            })
+
+            //- solution
+            .work__solution
