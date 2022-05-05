@@ -1,7 +1,7 @@
 extends ../base.pug
 
 mixin image({name,pic})
-    img(data-src=`/works/${name}/${pic}`)
+    img(data-src=`/works/${name}/${pic}` alt="Picture")
 
 mixin video({name,reel})
     video(src=`/works/${name}/${reel}` autoplay muted loop)
@@ -129,8 +129,8 @@ block body
                             })
                     .work__special__right__wrapper
                         .work__special__content__wrapper
-                            h6.heading!=work.data.special[0].heading.replace(/\n/g,"</br>")
-                            p.small-paragraph!=work.data.special[0].paragraph.replace(/\n/g,"</br>")
+                            h6.heading(data-animation="paragraph")!=work.data.special[0].heading.replace(/\n/g,"</br>")
+                            p.small-paragraph(data-animation="paragraph")!=work.data.special[0].paragraph.replace(/\n/g,"</br>")
                         figure.work__special__pic__wrapper
                             +image({
                                 name:id,
@@ -151,7 +151,40 @@ block body
                 .work__special__two__inner
                     .work__special__two__content__wrapper
                         .work__special__two__content__left
-                            h6.heading!=work.data.special_two[0].heading.replace(/\n/g,"</br>")
+                            h6.heading(data-animation="paragraph")!=work.data.special_two[0].heading.replace(/\n/g,"</br>")
                         .work__special__two__content__right
-                            h1.title_2!=work.data.special_two[0].title.replace(/\n/g,"</br>")
-                            p.small-paragraph!=work.data.special_two[0].heading.replace(/\n/g,"</br>")
+                            h1.mini-title(data-animation="paragraph")!=work.data.special_two[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph(data-animation="paragraph")!=work.data.special_two[0].paragraph.replace(/\n/g,"</br>")
+                    .work__special__design
+                        figure.work__special__design__pic__wrapper
+                            +image({
+                                name:id,
+                                pic:'design-2.webp'
+                            })
+
+            //- awards
+            .work__awards
+                .work__awards__inner
+                    .work__awards__content
+                        .work__awards__left
+                            h6.heading(data-animation="paragraph")!=work.data.awards[0].heading.replace(/\n/g,"</br>")
+                        .work__awards__right
+                            h1.mini-title(data-animation="paragraph")!=work.data.awards[0].title.replace(/\n/g,"</br>")
+                            ul.awards__list
+                                each item in work.data.awards[0].award_list
+                                    li.awards__item
+                                        p.paragraph(data-animation="paragraph")=item.text
+
+            //- next
+            .work__next
+                .work__next__inner
+                    .work__next__wrapper
+                        h1.mini-title(data-animation="paragraph")!=work.data.next[0].title.replace(/\n/g,"</br>")
+                        p.small-paragraph(data-animation="paragraph")!=work.data.next[0].paragraph.replace(/\n/g,"</br>")
+                        a.next__btn.main__btn.btn_1(href="/" data-animation="paragraph") Next project
+                .work__next__bg
+                    figure.work__next__bg__pic__wrapper
+                        +image({
+                            name:id,
+                            pic:'next.webp'
+                        })

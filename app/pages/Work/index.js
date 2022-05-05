@@ -19,6 +19,7 @@ export default class Work extends Page {
         links_wrapper: ".work__title__link",
         banner__pic: ".work__banner__bg__wrapper img",
         screen: ".work__screen__pic__wrapper img",
+        next: ".work__next__bg__pic__wrapper img",
         grid_one: ".grid__item__one",
         grid_two: ".grid__item__two",
         grid_three: ".grid__item__three",
@@ -44,6 +45,11 @@ export default class Work extends Page {
     this.parallaxEffectTwo = new Ukiyo(this.elements.screen, {
       speed: 2,
       scale: 1.25
+    });
+
+    this.parallaxEffectThree = new Ukiyo(this.elements.next, {
+      speed: 2,
+      scale: 1.4
     });
 
     // this.imgSlow.forEach((ele) => {
