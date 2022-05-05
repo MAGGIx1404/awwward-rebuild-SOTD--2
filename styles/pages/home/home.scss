@@ -57,6 +57,7 @@
   padding: 50vh 0 15vh 0;
   position: relative;
   color: $color-white;
+  overflow: hidden;
 
   &__inner {
     @extend %innerSection;

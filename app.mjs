@@ -99,19 +99,19 @@ app.get("/contact", async (req, res) => {
   });
 });
 
-// app.get("/work/:uid", async (req, res) => {
-//   const uid = req.params.uid;
-//   // const defaults = await handleRequest(client);
-//   const work = await client.getByUID("work", uid);
-//   const assets = [];
-//   // assets.push(work.data.work_gallery[0].image.url);
+app.get("/work/:uid", async (req, res) => {
+  const uid = req.params.uid;
+  // const defaults = await handleRequest(client);
+  const work = await client.getByUID("work", uid);
+  const assets = [];
+  // assets.push(work.data.work_gallery[0].image.url);
 
-//   return res.render("pages/work", {
-//     // ...defaults,
-//     work,
-//     assets
-//   });
-// });
+  return res.render("pages/work", {
+    // ...defaults,
+    work,
+    assets
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server started at ${port}`);

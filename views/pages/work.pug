@@ -1,0 +1,49 @@
+extends ../base.pug
+
+mixin image({name,pic})
+    img(data-src=`/works/${name}/${pic}`)
+
+
+
+block variables
+    - var template = 'work'
+    - var id = work.data.imgs_link
+
+block body
+    .work(data-background="" data-color="")
+        //- Scroll wrapper
+        .work__wrapper
+            .work__banner
+                .work__banner__inner
+                    .work__banner__content__wrapper
+                        .work__banner__title__Wrapper
+                            .work__banner__title__left
+                                h1.title_2!=work.data.banner[0].title.replace(/\n/g,"</br>")
+                                p.small-paragraph!=work.data.banner[0].paragraph.replace(/\n/g,"</br>")
+                            .work__banner__title__right
+                                a.link.btn_1.main__btn(href="/")!=work.data.banner[0].link.replace(/\n/g,"</br>")
+                        .work__banner__main__content
+                            p.big__paragraph!=work.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
+                            .info__lists__wrapper
+                                ul.info__list
+                                    each item in work.data.banner[0].client
+                                        li.info__item
+                                            p.paragraph=item.text
+                                ul.info__list
+                                    each item in work.data.banner[0].services
+                                        li.info__item
+                                            p.paragraph=item.text
+                                ul.info__list
+                                    each item in work.data.banner[0].industries
+                                        li.info__item
+                                            p.paragraph=item.text
+                                ul.info__list
+                                    each item in work.data.banner[0].date
+                                        li.info__item
+                                            p.paragraph=item.text
+                .work__banner__bg
+                    figure.work__banner__bg__wrapper
+                        +image({
+                            name: id,
+                            pic:'banner.webp'
+                            })

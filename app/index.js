@@ -2,6 +2,7 @@ import Home from "pages/Home";
 import About from "pages/About";
 import Contact from "pages/Contact";
 import Portfolio from "pages/Portfolio";
+import Work from "pages/Work";
 import Preloader from "components/Preloader";
 // import Transition from "components/Transition";
 import each from "lodash/each";
@@ -66,7 +67,8 @@ class App {
       home: new Home(),
       about: new About(),
       contact: new Contact(),
-      portfolio: new Portfolio()
+      portfolio: new Portfolio(),
+      work: new Work()
     };
 
     this.page = this.pages[this.template];
@@ -171,9 +173,7 @@ class App {
    * Add page transition on each "a" element
    */
   addLinkListeners() {
-    const links = document.querySelectorAll(
-      "a:not(.footer__content__cr__link)"
-    );
+    const links = document.querySelectorAll("a:not(.no-transition)");
     each(links, (link) => {
       link.onclick = (e) => {
         e.preventDefault();
