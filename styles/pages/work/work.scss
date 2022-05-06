@@ -293,12 +293,18 @@
         width: fit-content;
         height: fit-content;
         transform-origin: center;
+        max-width: 40vw;
+        max-height: 60vh;
+        overflow: hidden;
 
         &.grid__item__one {
           width: 30vw;
           height: 35vh;
+          max-width: 100vw !important;
+          max-height: 100vh !important;
 
           img {
+            object-fit: cover;
             width: 100% !important;
             height: 100% !important;
           }
@@ -310,7 +316,7 @@
         }
         &:nth-of-type(3) {
           bottom: 5%;
-          right: 10%;
+          right: 14%;
         }
         &:nth-of-type(4) {
           top: 10%;
@@ -371,6 +377,7 @@
 
 .work__reel {
   @extend %section;
+  padding: 20vh 0;
   background: rgba($color: $color-theme, $alpha: 0.5);
 
   &__inner {
@@ -500,6 +507,7 @@
   @extend %section;
   min-height: fit-content;
   padding: 15vh 0;
+  background-color: rgba($color: $color-theme, $alpha: 0.5);
 
   &__inner {
     @extend %innerSection;

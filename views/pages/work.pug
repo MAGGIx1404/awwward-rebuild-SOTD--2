@@ -184,7 +184,7 @@ block body
                     .work__next__wrapper
                         h1.mini-title(data-animation="paragraph")!=work.data.next[0].title.replace(/\n/g,"</br>")
                         p.small-paragraph(data-animation="paragraph")!=work.data.next[0].paragraph.replace(/\n/g,"</br>")
-                        a.next__btn.main__btn.btn_1(href="/" data-animation="paragraph") Next project
+                        a.next__btn.main__btn.btn_1(href=`/work/${work.data.next[0].link.uid}` data-animation="paragraph") Next project
                 .work__next__bg
                     figure.work__next__bg__pic__wrapper
                         +image({
