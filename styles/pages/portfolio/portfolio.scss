@@ -15,6 +15,10 @@
   &--active {
     opacity: 1;
 
+    .portfolio__banner {
+      opacity: 1 !important;
+    }
+
     .portfolio__item__pic__wrapper {
       &::after {
         transform: scaleY(0);
@@ -57,7 +61,7 @@
     font-weight: 700;
     line-height: 1;
     position: absolute;
-    top: 30vh;
+    top: 20vh;
     left: 5%;
     pointer-events: all !important;
     transition: all 0.5s ease;
@@ -78,6 +82,10 @@
   height: 100vh;
   max-height: 100vh;
   position: absolute;
+  background-color: $color-white;
+  opacity: 0;
+  // transform: scaleY(0);
+  transition: all 1s $ease-in-out;
 
   &__inner {
     width: 100%;
@@ -118,9 +126,13 @@ ul.portfolio__list {
   left: 0;
   z-index: 1;
   transform-origin: center;
-  transform: rotate(-30deg);
+  transform: rotate(-10deg);
+  transition: transform 1s ease;
+  background: $color-white;
 
   &.is-dragging {
+    transform: rotate(-15deg) !important;
+
     li.portfolio__item {
       figure {
         transform: scale(0.95) !important;
@@ -437,6 +449,29 @@ ul.portfolio__list {
 
   &.delay {
     animation-delay: 2s;
+  }
+}
+
+.portfolio__banner__logo {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  background: $color-gray;
+  @extend %center;
+
+  h1 {
+    font-size: 8rem;
+    font-weight: 500;
+    font-family: $font-a;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: $color-theme;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    padding: 5rem 5rem;
   }
 }
 

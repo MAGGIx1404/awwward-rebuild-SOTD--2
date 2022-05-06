@@ -1,8 +1,8 @@
 .preloader {
   @extend %cover;
   @extend %center;
-  background-color: $color-black;
-  color: $color-white;
+  color: $color-black;
+  background-color: $color-white;
   text-align: center;
   z-index: 201;
   will-change: transform;
@@ -33,6 +33,9 @@
       font-family: $font-a;
       line-height: 1;
       letter-spacing: 1px;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      padding: 5rem 5rem;
     }
   }
 }

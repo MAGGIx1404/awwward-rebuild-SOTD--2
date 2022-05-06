@@ -10,7 +10,7 @@ block body
             .home__banner
                 .home__banner__inner
                     .home__content__wrapper
-                        p.paragraph!=home.data.banner[0].paragraph.replace(/\n/g,"</br>")
+                        p.paragraph.paraone!=home.data.banner[0].paragraph.replace(/\n/g,"</br>")
                         h1.title.splitter!=home.data.banner[0].title.replace(/\n/g,"</br>")
                         p.paragraph.para(data-animation="paragraph")!=home.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
                         .list__wrapper
@@ -38,6 +38,9 @@ block body
                         img.home__banner__bg__pic.parallax__image.slide_2(data-src="/heroes/home-hero-2.jpg", alt="banner picture" data-slide="2")
                         img.home__banner__bg__pic.parallax__image.slide_3(data-src="/heroes/home-hero-3.jpg", alt="banner picture" data-slide="3")
                         canvas.webgl-container.parallax__image#webgl-container
+                //- bg logo
+                .home__banner__logo
+                    h1.text EXORSE
 
             .home__work__banner#home__work
                 .home__work__banner__inner

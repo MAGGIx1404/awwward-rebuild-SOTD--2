@@ -25,6 +25,7 @@
 
     .about__banner__bg__wrapper {
       transform: translateY(0%) !important;
+      // transform: scaleY(1) !important;
       transition-delay: -1s;
     }
   }
@@ -124,9 +125,10 @@
       width: 100%;
       height: 100%;
       transform: translateY(100%);
+      // transform: scaleY(0);
       transition: all 2s $ease-in-out;
-      outline: none;
-      border: none;
+      outline: $color-white;
+      border: $color-white;
 
       &::after {
         content: "";
@@ -154,6 +156,29 @@
         // opacity: 0;
         transition: opacity 0.2s;
       }
+    }
+  }
+
+  .about__banner__logo {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background: $color-gray;
+    @extend %center;
+
+    h1 {
+      font-size: 8rem;
+      font-weight: 500;
+      font-family: $font-a;
+      line-height: 1;
+      letter-spacing: 1px;
+      color: $color-theme;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      padding: 5rem 5rem;
     }
   }
 }

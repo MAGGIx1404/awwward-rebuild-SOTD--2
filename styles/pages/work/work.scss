@@ -14,6 +14,24 @@
 
   &--active {
     opacity: 1;
+
+    .work__banner__bg__wrapper {
+      transform: translateY(0%) !important;
+      // transform: scaleY(1) !important;
+      transition-delay: -1s;
+    }
+    .work__banner__title__wrapper {
+      h1,
+      p,
+      a {
+        .word {
+          .char {
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+          }
+        }
+      }
+    }
   }
 
   canvas {
@@ -63,16 +81,52 @@
         .work__banner__title__left {
           h1 {
             line-height: 1;
+
+            .word {
+              overflow: hidden;
+              .char {
+                transition-delay: calc(
+                  0ms + var(--char-index) * 25ms
+                ) !important;
+                transform: translateY(100%);
+                transition: transform 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+                  opacity 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+              }
+            }
           }
           p {
             margin-top: 3rem;
             font-weight: 300;
+
+            .word {
+              overflow: hidden;
+              .char {
+                transition-delay: calc(
+                  0ms + var(--char-index) * 25ms
+                ) !important;
+                transform: translateY(100%);
+                transition: transform 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+                  opacity 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+              }
+            }
           }
         }
         .work__banner__title__right {
           a {
             color: $color-white;
             font-weight: 400;
+
+            .word {
+              overflow: hidden;
+              .char {
+                transition-delay: calc(
+                  0ms + var(--char-index) * 25ms
+                ) !important;
+                transform: translateY(100%);
+                transition: transform 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+                  opacity 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+              }
+            }
           }
         }
       }
@@ -133,6 +187,8 @@
       height: 100%;
       overflow: hidden;
       position: relative;
+      transform: translateY(100%);
+      transition: all 2s $ease-in-out;
 
       &::after {
         content: "";
@@ -150,6 +206,28 @@
         height: 100%;
         object-fit: cover;
       }
+    }
+  }
+  .work__banner__logo {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background: $color-gray;
+    @extend %center;
+
+    h1 {
+      font-size: 8rem;
+      font-weight: 500;
+      font-family: $font-a;
+      line-height: 1;
+      letter-spacing: 1px;
+      color: $color-theme;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      padding: 5rem 5rem;
     }
   }
 }

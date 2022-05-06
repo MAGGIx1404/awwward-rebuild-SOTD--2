@@ -198,6 +198,7 @@ class App {
     let hamb__menu = document.querySelector(".hamb__menu");
     const hamb__links = [...document.querySelectorAll("[data-links]")];
     const hamb__pics = [...document.querySelectorAll("[data-hover]")];
+    const links = [...document.querySelectorAll("a")];
     let bloack = document.querySelector(".images__wrapper__block");
     let link_word = document.querySelectorAll(".hamb__menu__link .word");
     let mainContent = document.querySelector(".content");
@@ -212,22 +213,26 @@ class App {
       });
     }
 
-    hamb__links.forEach((el) => {
+    links.forEach((el) => {
       el.addEventListener("click", function () {
-        bloack.classList.remove("active");
-        tl.to(link_word, 0.5, {
-          y: "110%",
-          opacity: 0,
-          ease: Expo.easeInOut,
-          stagger: {
-            from: "end",
-            each: 0.04
-          }
-        });
-        setTimeout(() => {
-          hamb__menu.classList.remove("active");
-          mainContent.classList.remove("active");
-        }, 700);
+        if (hamb__menu.classList.contains("active")) {
+          bloack.classList.remove("active");
+          tl.to(link_word, 0.5, {
+            y: "110%",
+            opacity: 0,
+            ease: Expo.easeInOut,
+            stagger: {
+              from: "end",
+              each: 0.04
+            }
+          });
+          setTimeout(() => {
+            hamb__menu.classList.remove("active");
+            mainContent.classList.remove("active");
+          }, 700);
+        } else {
+          console.log("done");
+        }
       });
     });
 

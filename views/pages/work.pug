@@ -19,10 +19,10 @@ block body
                     .work__banner__content__wrapper
                         .work__banner__title__wrapper
                             .work__banner__title__left
-                                h1.title_2!=work.data.banner[0].title.replace(/\n/g,"</br>")
-                                p.small-paragraph!=work.data.banner[0].paragraph.replace(/\n/g,"</br>")
+                                h1.title_2.splitter!=work.data.banner[0].title.replace(/\n/g,"</br>")
+                                p.small-paragraph.splitter!=work.data.banner[0].paragraph.replace(/\n/g,"</br>")
                             .work__banner__title__right
-                                a.link.btn_1.main__btn(href="/")!=work.data.banner[0].link.replace(/\n/g,"</br>")
+                                a.link.btn_1.splitter.main__btn(href="/")!=work.data.banner[0].link.replace(/\n/g,"</br>")
                         .work__banner__main__content
                             p.big__paragraph(data-animation="paragraph")!=work.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
                             .info__lists__wrapper
@@ -49,6 +49,9 @@ block body
                             name: id,
                             pic:'banner.webp'
                             })
+                //- bg logo
+                .work__banner__logo
+                    h1.text EXORSE
 
             //- objectives
             .work__objectives

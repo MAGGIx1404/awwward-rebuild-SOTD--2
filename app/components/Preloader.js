@@ -57,7 +57,7 @@ export default class Preloader extends Component {
         ease: "ease.out"
       });
       this.animateOut.to(this.elements.preloaderText, 1, {
-        y: "100%",
+        opacity: 0,
         ease: "ease.out"
       });
       this.animateOut.to(this.elements.path, 0.8, {
