@@ -56,10 +56,10 @@ export default class Preloader extends Component {
         duration: 1.5,
         ease: "ease.out"
       });
-      this.animateOut.to(this.elements.preloaderText, 1, {
-        opacity: 0,
-        ease: "ease.out"
-      });
+      // this.animateOut.to(this.elements.preloaderText, 1, {
+      //   opacity: 0,
+      //   ease: "ease.out"
+      // });
       this.animateOut.to(this.elements.path, 0.8, {
         attr: {
           d: start

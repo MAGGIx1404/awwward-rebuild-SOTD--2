@@ -7,7 +7,7 @@ block body
     .home(data-background="" data-color="")
         //- Scroll wrapper
         .home__wrapper
-            .home__banner
+            .home__banner(data-cursor-scroll)
                 .home__banner__inner
                     .home__content__wrapper
                         p.paragraph.paraone!=home.data.banner[0].paragraph.replace(/\n/g,"</br>")
@@ -50,30 +50,30 @@ block body
                         .home__work__content__text
                             h6.heading(data-animation="paragraph")!=home.data.work[0].content_title.replace(/\n/g,"</br>")
                             p.paragraph(data-animation="paragraph")!=home.data.work[0].paragraph.replace(/\n/g,"</br>")
-                        .work__item.work__item__one(data-heading="Ali Ali")
-                            a.home__work__item__link(href="/" data-scroll data-scroll-offset="25%")
+                        .work__item.work__item__one(data-heading="Ali Ali" data-cursor-view)
+                            a.home__work__item__link(href="/work/ali-ali" data-scroll data-scroll-offset="25%")
                                 figure.home__work__item__pic__wrapper
                                     img.home__work__item__pic.parallax__image__slow(data-src="/heroes/1-hero.webp", alt="project pic")
                                 video(src="/videos/1-hover.mp4" loop muted autoplay)
-                        .work__item.work__item__two.right(data-heading="Ottografie")
-                            a.home__work__item__link(href="/"  data-scroll data-scroll-offset="25%")
+                        .work__item.work__item__two.right(data-heading="Ottografie" data-cursor-view)
+                            a.home__work__item__link(href="/work/ottografie"  data-scroll data-scroll-offset="25%")
                                 figure.home__work__item__pic__wrapper
                                     img.home__work__item__pic.parallax__image__slow(data-src="/heroes/2-hero.webp", alt="project pic")
                                 video(src="/videos/2-hover.mp4" loop muted autoplay)
-                        .work__item.work__item__three.center(data-heading="Rino & Pelle")
-                            a.home__work__item__link(href="/"  data-scroll data-scroll-offset="25%")
+                        .work__item.work__item__three.center(data-heading="Rino & Pelle" data-cursor-view)
+                            a.home__work__item__link(href="/work/rino"  data-scroll data-scroll-offset="25%")
                                 figure.home__work__item__pic__wrapper
                                     img.home__work__item__pic.parallax__image__slow(data-src="/heroes/3-hero.webp", alt="project pic")
                                 video(src="/videos/3-hover.mp4" loop muted autoplay)
-                        .work__item.work__item__four(data-heading="Abele Interiors")
-                            a.home__work__item__link(href="/"  data-scroll data-scroll-offset="25%")
+                        .work__item.work__item__four(data-heading="Aebele Interiors" data-cursor-view)
+                            a.home__work__item__link(href="/work/aebele"  data-scroll data-scroll-offset="25%")
                                 figure.home__work__item__pic__wrapper
                                     img.home__work__item__pic.parallax__image__slow(data-src="/heroes/4-hero.webp", alt="project pic")
                                 video(src="/videos/4-hover.mp4" loop muted autoplay)
                         a.btn.main__btn(href="/")!=home.data.work[0].btn_1.replace(/\n/g,"</br>")
 
             //- reel
-            .home__reel__wrapper
+            .home__reel__wrapper(data-cursor-play)
                 .home__reel__wrapper__main
                     .home__reel__wrapper__inner
                         .home__reel__content__wrapper

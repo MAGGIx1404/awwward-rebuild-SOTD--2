@@ -5,6 +5,8 @@ block variables
 
 block body
     .contact(data-background="" data-color="")
+        canvas
+            canvas(data-cursor-scroll)
         //- Scroll wrapper
         .contact__wrapper
             .contact__banner
@@ -15,15 +17,15 @@ block body
                         .contact__main__content
                             .contact__main__left
                                 p.small-paragraph!=contact.data.banner[0].paragraph.replace(/\n/g,"</br>")
-                                a.btn_1.main__btn.no-transition(href="/")!=contact.data.banner[0].btn_1.replace(/\n/g,"</br>")
-                                a.btn_1.main__btn.no-transition(href="/")!=contact.data.banner[0].btn_2.replace(/\n/g,"</br>")
+                                a.btn_1.main__btn.no-transition(href="/" data-cursor-view)!=contact.data.banner[0].btn_1.replace(/\n/g,"</br>")
+                                a.btn_1.main__btn.no-transition(href="/" data-cursor-view)!=contact.data.banner[0].btn_2.replace(/\n/g,"</br>")
                             .contact__main__right
                                 p.small-paragraph!=contact.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
-                                a.btn_1.main__btn.no-transition(href="/")!=contact.data.banner[0].btn_3.replace(/\n/g,"</br>")
+                                a.btn_1.main__btn.no-transition(href="/" data-cursor-view)!=contact.data.banner[0].btn_3.replace(/\n/g,"</br>")
                     .contact__picture__wrapper
                         figure.contact__picture__wrapper__inner
                             img.contact__picture(data-src="/heroes/contact-hero.webp", alt="Contact Picture")
-                            canvas.webgl__container#webgl__container
+                            canvas.webgl__container#webgl__container(data-cursor-play)
 
             //- footer
             include ../partials/footer

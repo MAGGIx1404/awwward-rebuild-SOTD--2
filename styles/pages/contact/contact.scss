@@ -127,6 +127,7 @@
       top: 50%;
       transform: translateY(-50%);
       padding-left: 20vw;
+      pointer-events: none;
       @extend %center;
 
       figure {

@@ -12,9 +12,12 @@ block variables
 
 block body
     .work(data-background="" data-color="")
+        canvas
+            canvas(data-cursor-play)
+            canvas(data-cursor-view)
         //- Scroll wrapper
         .work__wrapper
-            .work__banner
+            .work__banner(data-cursor-scroll)
                 .work__banner__inner
                     .work__banner__content__wrapper
                         .work__banner__title__wrapper
@@ -22,7 +25,7 @@ block body
                                 h1.title_2.splitter!=work.data.banner[0].title.replace(/\n/g,"</br>")
                                 p.small-paragraph.splitter!=work.data.banner[0].paragraph.replace(/\n/g,"</br>")
                             .work__banner__title__right
-                                a.link.btn_1.splitter.main__btn(href="/")!=work.data.banner[0].link.replace(/\n/g,"</br>")
+                                a.link.btn_1.splitter.main__btn.no-transition(href=`${work.data.banner[0].web_link.url}` target="blank")!=work.data.banner[0].link.replace(/\n/g,"</br>")
                         .work__banner__main__content
                             p.big__paragraph(data-animation="paragraph")!=work.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
                             .info__lists__wrapper
@@ -184,7 +187,7 @@ block body
                     .work__next__wrapper
                         h1.mini-title(data-animation="paragraph")!=work.data.next[0].title.replace(/\n/g,"</br>")
                         p.small-paragraph(data-animation="paragraph")!=work.data.next[0].paragraph.replace(/\n/g,"</br>")
-                        a.next__btn.main__btn.btn_1(href=`/work/${work.data.next[0].link.uid}` data-animation="paragraph") Next project
+                        a.next__btn.main__btn.btn_1(href=`/work/${work.data.next[0].link.uid}` data-animation="paragraph" data-cursor-view) Next project
                 .work__next__bg
                     figure.work__next__bg__pic__wrapper
                         +image({

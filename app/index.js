@@ -9,6 +9,7 @@ import each from "lodash/each";
 import magnetBtn from "vendors/magnet";
 import gsap from "gsap";
 import { Expo } from "gsap";
+import { Linear } from "gsap/all";
 
 class App {
   constructor() {
@@ -31,6 +32,7 @@ class App {
     this.createPages();
     magnetBtn();
     this.hambMenu();
+    this.cursor();
     this.addLinkListeners();
     this.addEventListeners();
     this.update();
@@ -264,6 +266,60 @@ class App {
           stagger: 0.1
         });
       }
+    });
+  }
+
+  // cursor
+  cursor() {
+    const cursor = document.querySelector(".cursor");
+    const cursorBlock = document.querySelector(".cursor__block");
+    const cursorScroll = document.querySelector(".cursor__scroll");
+    const cursorView = document.querySelector(".cursor__view");
+    const cursorPlay = document.querySelector(".cursor__play");
+    const cursorScrollWrapper = document.querySelector("[data-cursor-scroll]");
+    const cursorPlayWrapper = document.querySelector("[data-cursor-play]");
+    const cursorViewWrapper = [
+      ...document.querySelectorAll("[data-cursor-view]")
+    ];
+
+    document.body.addEventListener("mousemove", (evt) => {
+      const mouseX = evt.clientX;
+      const mouseY = evt.clientY;
+      gsap.set(cursor, {
+        x: mouseX,
+        y: mouseY
+      });
+      gsap.to(cursorBlock, {
+        x: mouseX,
+        y: mouseY,
+        stagger: -0.1
+      });
+    });
+
+    document.body.addEventListener("mouseleave", function () {
+      cursorScroll.classList.remove("active");
+      cursorPlay.classList.remove("active");
+      cursorView.classList.remove("active");
+    });
+    cursorScrollWrapper.addEventListener("mouseover", function () {
+      cursorScroll.classList.add("active");
+    });
+    cursorScrollWrapper.addEventListener("mouseleave", function () {
+      cursorScroll.classList.remove("active");
+    });
+    cursorPlayWrapper.addEventListener("mouseover", function () {
+      cursorPlay.classList.add("active");
+    });
+    cursorPlayWrapper.addEventListener("mouseleave", function () {
+      cursorPlay.classList.remove("active");
+    });
+    cursorViewWrapper.forEach((el) => {
+      el.addEventListener("mouseover", function () {
+        cursorView.classList.add("active");
+      });
+      el.addEventListener("mouseleave", function () {
+        cursorView.classList.remove("active");
+      });
     });
   }
 }
