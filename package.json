@@ -14,6 +14,10 @@
     "test": "node -c *.js",
     "postinstall": "npm run frontend:build"
   },
+  "engine":{
+    "node":"14.17.1",
+    "npm": "6.14.13"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MAGGIx1404/awwward-rebuild-SOTD--2.git"
