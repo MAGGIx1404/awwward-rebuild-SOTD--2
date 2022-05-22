@@ -13,7 +13,7 @@ import { Linear } from "gsap/all";
 
 class App {
   constructor() {
-    console.log("🦸🦸 Superman Initialize");
+    console.log("🦸🦸 Superman Initialize hhhhhhh");
     this.preloader = null;
     // this.hamburger = null;
     this.content = null;
