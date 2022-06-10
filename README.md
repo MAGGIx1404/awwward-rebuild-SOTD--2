@@ -56,7 +56,7 @@ After creating your `.env` file and setting up your Prismic account, you're able
 
 ```sh
 # Clone the project.
-git clone https://github.com/MAGGIx1404/awwward-rebuild-SOTD--1.git
+git clone https://github.com/MAGGIx1404/awwward-rebuild-SOTD--2.git
 
 # Install npm depedencies.
 npm install
