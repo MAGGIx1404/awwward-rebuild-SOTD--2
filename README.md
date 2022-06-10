@@ -25,7 +25,7 @@ This is the repository of [Exo-ape](https://www.exoape.com/) Dummy Code. We deci
 
 ### Front End
 
-The front end of the portfolio was made entirely with plain JavaScript code using ECMAScript 2015+. It's also using libraries such as [GSAP](https://greensock.com/), [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll), [Lodash](https://lodash.com/) and [Three.js](https://threejs.org/). To generate our static files that will be uploaded to the environment, we're using [Webpack](https://webpack.js.org/).
+The front end of the portfolio was made entirely with plain JavaScript code using ECMAScript 2015+. It's also using libraries such as [GSAP](https://greensock.com/), [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll), [Lodash](https://lodash.com/) and [Three.js](https://threejs.org/). and using [Ajax](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX) for create page transitions. To generate our static files that will be uploaded to the environment, we're using [Webpack](https://webpack.js.org/).
 
 ### Note:
 
