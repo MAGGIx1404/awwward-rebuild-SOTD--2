@@ -6,4 +6,4 @@ npm-debug.log
 
 .DS_Store
 .sass-cache
-public/
+# public/
